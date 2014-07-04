@@ -15,7 +15,8 @@ module Wikiscript
 
     def text( title )
       ## todo/fix: urlencode title ???
-      get( "?action=raw&title=#{title}" )
+      ## fix: use params hash!!!
+      get( "action=raw&title=#{title}" )
     end
 
 private

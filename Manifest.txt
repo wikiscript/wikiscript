@@ -4,4 +4,7 @@ README.md
 Rakefile
 lib/wikiscript.rb
 lib/wikiscript/client.rb
+lib/wikiscript/page.rb
 lib/wikiscript/version.rb
+test/helper.rb
+test/test_austria.rb

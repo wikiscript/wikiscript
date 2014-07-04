@@ -17,6 +17,7 @@ require 'logutils'
 
 require 'wikiscript/version' # let it always go first
 require 'wikiscript/client'
+require 'wikiscript/page'
 
 
 module Wikiscript
