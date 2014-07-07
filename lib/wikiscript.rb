@@ -1,17 +1,18 @@
+# encoding: utf-8
+
 ## stdlibs
 
 require 'net/http'
 require 'uri'
-require 'json'
+require 'cgi'
 require 'pp'
-require 'ostruct'
 
 
 ## 3rd party gems/libs
 ## require 'props'
 
 require 'logutils'
-
+require 'fetcher'
 
 # our own code
 
@@ -29,7 +30,18 @@ module Wikiscript
   def self.root
     "#{File.expand_path( File.dirname(File.dirname(__FILE__)) )}"
   end
-  
+
+
+  ## for now make lang a global - change why? why not??
+  def self.lang=(value)
+    @@lang = value.to_s     # use to_s - lets you pass ing :en, :de etc.
+  end
+
+  def self.lang
+    # note: for now always returns a string e.g. 'en', 'de' etc. not a symbol
+    @@lang ||= 'en'
+  end
+
 end # module Wikiscript
 
 

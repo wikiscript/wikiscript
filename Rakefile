@@ -18,7 +18,8 @@ Hoe.spec 'wikiscript' do
   self.history_file = 'HISTORY.md'
 
   self.extra_deps = [
-    ['logutils' ]
+    ['logutils' ],
+    ['fetcher']
   ]
 
   self.licenses = ['Public Domain']
