@@ -8,4 +8,4 @@ lib/wikiscript/page.rb
 lib/wikiscript/version.rb
 test/helper.rb
 test/test_page.rb
-test_test_page_de.rb
+test/test_page_de.rb
