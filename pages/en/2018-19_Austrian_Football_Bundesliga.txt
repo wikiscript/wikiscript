@@ -3,40 +3,40 @@
 {{Infobox football league season
 | competition                = [[Austrian Football Bundesliga|Austrian Bundesliga]]
 | season                     = 2018–19
-| dates                      = 
+| dates                      =
 | winners                    = [[FC Red Bull Salzburg|Red Bull Salzburg]]<br>(13th title)
-| relegated                  = 
+| relegated                  =
 | continentalcup1            = [[2019–20 UEFA Champions League|Champions League]]
 | continentalcup1 qualifiers = [[FC Red Bull Salzburg|Red Bull Salzburg]]<!--<br>[[LASK Linz]]-->
 | continentalcup2            = [[2019–20 UEFA Europa League|Europa League]]
-| continentalcup2 qualifiers = 
-| league topscorer           = 
-| biggest home win           = 
-| biggest away win           = 
-| highest scoring            = 
-| longest wins               = 
-| longest unbeaten           =  
-| longest winless            =  
-| longest losses             =  
-| matches                    = 
-| total goals                = 
+| continentalcup2 qualifiers =
+| league topscorer           =
+| biggest home win           =
+| biggest away win           =
+| highest scoring            =
+| longest wins               =
+| longest unbeaten           =
+| longest winless            =
+| longest losses             =
+| matches                    =
+| total goals                =
 | prevseason                 = [[2017–18 Austrian Football Bundesliga|2017–18]]
 | nextseason                 = [[2019–20 Austrian Football Bundesliga|2019–20]]
-| updated                    = 
+| updated                    =
 }}
 The '''2018–19 [[Austrian Football Bundesliga]]''' is the 107th season of top-tier [[Association football|football]] in [[Austria]]. [[FC Red Bull Salzburg|Red Bull Salzburg]] successfully defended last year's title.
 
 == Changes ==
 === Structural changes ===
-The league expanded from 10 to 12 teams. A new format was introduced this season, under which the league is split into a championship round and a relegation round after 22 matches.<ref name="Format">{{cite web|url=https://www.bundesliga.at/de/redaktion/news/16-17/tbl/reform---spielmodus/ |title=Die Details der Ligareform: so wird ab 2018/19 gespielt |date=2 December 2016 |access-date=8 April 2019}}</ref>
+The league expanded from 10 to 12 teams. A new format was introduced this season, under which the league is split into a championship round and a relegation round after 22 matches.
 
 === Team changes ===
 [[FC Wacker Innsbruck (2002)|Wacker Innsbruck]] were promoted as champions of the [[2017–18 Austrian Football First League]] and [[TSV Hartberg]] were promoted as runners-up. No teams were relegated as [[SKN St. Pölten|St. Pölten]] won their relegation playoff match.
 
 == Teams ==
 === Stadia and locations ===
-{{Location map+|Austria|width = 425|float = right|caption = Location of teams in the '''2018–19 Austrian Football Bundesliga''' 
-|places = 
+{{Location map+|Austria|width = 425|float = right|caption = Location of teams in the '''2018–19 Austrian Football Bundesliga'''
+|places =
 {{Location map~|Austria|lat=48.0975|long=16.310833|label=<div style="position:relative;top:10px;right:-20px;">{{nobreak|
 [[FC Admira Wacker Mödling|Admira]]}}</div>}}
 {{Location map~|Austria|lat=48.162306|long=16.386714|label=[[FK Austria Wien|Austria]]|position=right}}
@@ -91,9 +91,9 @@ Capacity
 |[[Stadion Schnabelholz]]
 |8,500
 |-
-|[[SKN St. Pölten|St. Pölten]] 
-|[[Sankt Pölten]] 
-|[[NV Arena]] 
+|[[SKN St. Pölten|St. Pölten]]
+|[[Sankt Pölten]]
+|[[NV Arena]]
 |8,000
 |-
 |[[SK Sturm Graz|Sturm Graz]]
@@ -106,14 +106,14 @@ Capacity
 |[[Pappelstadion]]
 |17,100
 |-
-|[[TSV Hartberg]] 
-|[[Hartberg]] 
+|[[TSV Hartberg]]
+|[[Hartberg]]
 |Profertil Arena Hartberg
 |4,500
 |-
-|[[FC Wacker Innsbruck (2002)|Wacker Innsbruck]] 
-|[[Innsbruck]] 
-|[[Tivoli-Neu]] 
+|[[FC Wacker Innsbruck (2002)|Wacker Innsbruck]]
+|[[Innsbruck]]
+|[[Tivoli-Neu]]
 |16,000
 |-
 |[[Wolfsberger AC]]
@@ -301,7 +301,7 @@ The points obtained during the regular season were halved (and rounded down) bef
 {{2018–19 Austrian Football Bundesliga Relegation round table}}
 
 == Europa League play-offs ==
-The winner and the runner-up of the relegation round will play a one-legged play-off semi-final match against each other. The winner will play a two-legged final against the fifth-placed team from the championship round to determine the third Europa League participant.<ref name="Format" />
+The winner and the runner-up of the relegation round will play a one-legged play-off semi-final match against each other. The winner will play a two-legged final against the fifth-placed team from the championship round to determine the third Europa League participant.
 
 === Semi-final ===
 {{football box
@@ -311,10 +311,10 @@ The winner and the runner-up of the relegation round will play a one-legged play
 |score      = 2–0
 |report     = [https://www.bundesliga.at/de/spielbericht/bl1/20182019/33/1-51689/info/ Report]
 |team2      = [[SV Mattersburg|Mattersburg]]
-|goals1     = 
+|goals1     =
 *[[Christoph Knasmüllner|Knasmüllner]] {{goal|8}}
 *[[Aliou Badji|Badji]] {{goal|13}}
-|goals2     = 
+|goals2     =
 |stadium    = [[Allianz Stadion]], [[Vienna]]
 |attendance = 10,600
 |referee    = Rene Eisner
@@ -328,7 +328,7 @@ The winner and the runner-up of the relegation round will play a one-legged play
 |score      = 1–2
 |report     = https://www.bundesliga.at/de/spielbericht/bl1/20182019/34/1-51690/info/
 |team2      = [[SK Sturm Graz|Sturm Graz]]
-|goals1     = 
+|goals1     =
 *[[Stefan Schwab|Schwab]] {{goal|60}}
 |goals2     =
 *[[Jakob Jantscher|Jantscher]] {{goal|69|pen.}}
@@ -344,7 +344,7 @@ The winner and the runner-up of the relegation round will play a one-legged play
 |score      = 0–1
 |report     = https://www.bundesliga.at/de/spielbericht/bl1/20182019/34/1-51690/info/
 |team2      = [[SK Rapid Wien|Rapid Wien]]
-|goals1     = 
+|goals1     =
 |goals2     = [[Lucas Spendelhofer|Spendelhofer]] {{goal|43|o.g.}}
 |stadium    = [[Liebenauer Stadium|Merkur-Arena]], [[Graz]]
 |attendance = 9,315
@@ -353,7 +353,7 @@ The winner and the runner-up of the relegation round will play a one-legged play
 
 == Statistics ==
 === Top scorers ===
-{{updated|27 May 2019}} <ref>{{Cite web |url=https://www.bundesliga.at/de/statistik/aktuelle-saison/tore/torschuetzenliste/ |title=Bundesliga.at - Torschützenliste |access-date=7 April 2019}}</ref>
+{{updated|27 May 2019}}
 {| class="wikitable" style="text-align:center"
 |-
 !Rank

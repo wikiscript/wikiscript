@@ -17,7 +17,7 @@
 |Partei             = SPÖ
 |Gemeinderatanzahl  = 42
 |Wahljahr           = 2016
-|Gemeinderat        = 
+|Gemeinderat        =
 {{Sitzverteilung
 | Legende = ja
 | Beschriftung = Sitze
@@ -33,6 +33,6 @@
 |Bildbeschreibung1  = St. Pölten
 }}
 
-'''St. Pölten''' (amtlicher Name,<ref name="Stadtrecht">{{Internetquelle |autor=[[Bundeskanzleramt (Österreich)|Bundeskanzleramt]] |url=https://www.ris.bka.gv.at/Dokumente/LrNo/LRNI_2001026/LRNI_2001026.html |titel=St. Pöltner Stadtrecht 1977 |werk=gv.at |archiv-url=https://web.archive.org/web/20131020185322/https://www.ris.bka.gv.at/Dokumente/LrNo/LRNI_2001026/LRNI_2001026.html |archiv-datum=2013-10-20 |hrsg=[[Rechtsinformationssystem der Republik Österreich]] |zugriff=2016-12-15}}</ref> auch ''Sankt Pölten'' geschrieben) ist seit 1986 Landeshauptstadt und mit {{EWZ|AT|302}} Einwohnern (Stand {{EWD|AT|3}})<ref>{{EWQ|AT|30201}}.</ref> größte Stadt von [[Niederösterreich]]. Bezogen auf die Einwohnerzahl belegt St.&nbsp;Pölten auf der [[Liste der Landeshauptstädte in Österreich|Liste der Städte Österreichs]] den neunten Platz.
+'''St. Pölten''' (amtlicher Name, auch ''Sankt Pölten'' geschrieben) ist seit 1986 Landeshauptstadt und mit {{EWZ|AT|302}} Einwohnern (Stand {{EWD|AT|3}}) größte Stadt von [[Niederösterreich]]. Bezogen auf die Einwohnerzahl belegt St.&nbsp;Pölten auf der [[Liste der Landeshauptstädte in Österreich|Liste der Städte Österreichs]] den neunten Platz.
 
-Die Stadt im [[Alpenvorland]] am Fluss [[Traisen (Fluss)|Traisen]] hat eine Fläche von {{FL|AT|302|2}}&nbsp;km² und ist als [[Statutarstadt (Österreich)|Statutarstadt]] sowohl Gemeinde als auch [[Politischer Bezirk|Bezirk]]. Die Gegend St.&nbsp;Pöltens ist seit der Steinzeit bewohnt, die Stadt wird&nbsp;– je nach Definition&nbsp;– als die oder zumindest eine der [[Älteste Stadt Österreichs|ältesten Städte Österreichs]] bezeichnet. Am 17. November 2016 wurde St.&nbsp;Pölten als fünfundsiebzigster Stadt der Ehrentitel „[[Reformationsstadt Europas]]“ durch die [[Gemeinschaft Evangelischer Kirchen in Europa#Reformationsstadt Europas|Gemeinschaft Evangelischer Kirchen in Europa]] verliehen.<ref name="Reformation">Stadtporträt des Projekts „Reformationsstädte Europas“: [http://reformation-cities.org/cities/st-poelten/ ''Evangelisch in Niederösterreich''] (mit einem Votum von [[Bürgermeister#Österreich|BM]] Matthias Stadtler). In: ''{{lang|en|reformation-cities.org/cities}},'' abgerufen am 20. Oktober 2017. Zur Bedeutung St.&nbsp;Pöltens in der Reformationsgeschichte siehe auch den Abschnitt [[#Frühe Neuzeit|Frühe Neuzeit]].</ref>
+Die Stadt im [[Alpenvorland]] am Fluss [[Traisen (Fluss)|Traisen]] hat eine Fläche von {{FL|AT|302|2}}&nbsp;km² und ist als [[Statutarstadt (Österreich)|Statutarstadt]] sowohl Gemeinde als auch [[Politischer Bezirk|Bezirk]]. Die Gegend St.&nbsp;Pöltens ist seit der Steinzeit bewohnt, die Stadt wird&nbsp;– je nach Definition&nbsp;– als die oder zumindest eine der [[Älteste Stadt Österreichs|ältesten Städte Österreichs]] bezeichnet. Am 17. November 2016 wurde St.&nbsp;Pölten als fünfundsiebzigster Stadt der Ehrentitel „[[Reformationsstadt Europas]]“ durch die [[Gemeinschaft Evangelischer Kirchen in Europa#Reformationsstadt Europas|Gemeinschaft Evangelischer Kirchen in Europa]] verliehen.

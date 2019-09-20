@@ -13,15 +13,15 @@ Die '''österreichische Fußballmeisterschaft''' wird '''2019/20''' zum 108. Mal
 | Meister =
 | Herbstmeister =
 | UEFA Champions League Quali =
-| Europa League Quali = 
-| Absteiger = 
+| Europa League Quali =
+| Absteiger =
 | Mannschaften = 12
 | Spiele = 132
 | Play-off-Spiele = 63
 | gespielte Spiele = 42 <!-- 15.9. -->
 | geschossene Tore = 153 <!-- 15.9. -->
 | Zuschauer = 287.875 <!-- 15.9. -->
-| Torschützenkönig = 
+| Torschützenkönig =
 | Gelbe Karten = 171 <!-- 15.9. -->
 | Gelb-rote Karten = 5 <!-- 15.9. -->
 | Rote Karten = 3 <!-- 15.9. -->
@@ -52,14 +52,14 @@ Die Bundesliga ist die höchste Spielklasse im österreichischen Fußball. Diese
 
 Niederösterreich, Wien und die Steiermark stellen je zwei Vereine, das Burgenland, Kärnten, Oberösterreich, Salzburg, Tirol und Vorarlberg je einen.
 
-Der [[Fernsehen|TV]]-Anbieter ''[[Sky Deutschland|Sky Deutschland GmbH]]'' hat die Rechte alle Bundesligaspiele in voller Länge zu zeigen, die auf dem Kanal ''sky sport austria'' im [[Pay-TV]] ausgestrahlt werden. Der Sender zeigt alle Spiele in Konferenzschaltung und als Einzelspiele. Zudem werden vier Spiele sowie eine Highlight-Sendung im Free-TV gesendet.<ref>[http://www.bundesliga.at/de/redaktion/apa/rechte-der-fussball-bundesliga-ab-2018-19-exklusiv-bei-sky/ Rechte der Fußball-Bundesliga ab 2018/19 exklusiv bei Sky] bundesliga.at, am 31. Oktober 2017, abgerufen am 15. April 2019</ref> Weiters werden die Play-off-Spiele zur Europa-League von Sky kostenlos im Livestream gezeigt. Hightlightsendungen gibt es auf Sky, im ORF sowie bei oe24.tv. Auch LAOLA1 bietet auf seiner Internetseite Highlights der Spiele an.<ref>{{Internetquelle |url=https://www.laola1.at/de/red/fussball/bundesliga/hintergrund/bundesliga-und-2--liga--uebersicht-ueber-die-tv-rechte/ |titel=Bundesliga im TV: Wer zeigt was wann? |zugriff=2019-04-15}}</ref>
+Der [[Fernsehen|TV]]-Anbieter ''[[Sky Deutschland|Sky Deutschland GmbH]]'' hat die Rechte alle Bundesligaspiele in voller Länge zu zeigen, die auf dem Kanal ''sky sport austria'' im [[Pay-TV]] ausgestrahlt werden. Der Sender zeigt alle Spiele in Konferenzschaltung und als Einzelspiele. Zudem werden vier Spiele sowie eine Highlight-Sendung im Free-TV gesendet. Weiters werden die Play-off-Spiele zur Europa-League von Sky kostenlos im Livestream gezeigt. Hightlightsendungen gibt es auf Sky, im ORF sowie bei oe24.tv. Auch LAOLA1 bietet auf seiner Internetseite Highlights der Spiele an.
 
 === Modus ===
 In der Saison 2019/20 treten zum zweiten Mal nach der Saison 2018/19 zwölf Klubs in zunächst 22 Runden gegeneinander an. Jede Mannschaft spielt somit jeweils einmal zu Hause und auswärts gegen jede andere Mannschaft. Danach kommen die besten sechs Mannschaften in die Meistergruppe und die restlichen sechs in die Qualifikationsgruppe. Die Punkte aus dem Grunddurchgang werden halbiert. Bei halben Punkten wird abgerundet. Sind zwei Klubs am Ende des Finaldurchgangs punktegleich und wurde bei einem dieser Klubs ein halber Punkt abgerundet, wird dieser Klub vorgereiht. Wurde bei keinem oder bei beiden Klubs abgerundet, wird als nächstes Entscheidungskriterium die Tordifferenz herangezogen. Sollte auch diese gleich sein, werden die weiteren vier bestehenden Entscheidungskriterien herangezogen.
 
 Danach folgt noch für die Plätze 4 und 5 der Meistergruppe und für den Sieger der Qualifikationsgruppe ein Europa-League-Playoff, in dem der letzte Europacup-Startplatz ausgespielt wird.
 
-Aufgrund der Europacup-Ergebnisse der österreichischen Mannschaften in der Saison 2018/19 belegt Österreich zum Ende der Saison den 12. Platz der [[UEFA-Fünfjahreswertung]]. Somit werden über die Bundesliga und den [[Österreichischer Fußball-Cup 2019/20|ÖFB-Cup]] in der Saison 2019/20 zwei Startplätze für die Champions League und drei Startplätze für die Europa League ausgespielt. Der Meister der Bundesliga steigt im Play-off ein, der Vize-Meister startet in der zweiten Qualifikationsrunde; der Cupsieger ist für die [[UEFA Europa League 2019/20|UEFA Europa League]] startberechtigt, der Dritte sowie der Sieger des Europa-League-Playoffs spielen in der Qualifikation zu dieser.<ref>[https://kurier.at/sport/fussball/durch-ajax-remis-kein-cl-fixplatz-fuer-oesterreich-2020/400463287 Durch Ajax-Remis: Kein CL-Fixplatz für Österreich 2020] kurier.at, am 10. April 2019, abgerufen am 15. April 2019</ref>
+Aufgrund der Europacup-Ergebnisse der österreichischen Mannschaften in der Saison 2018/19 belegt Österreich zum Ende der Saison den 12. Platz der [[UEFA-Fünfjahreswertung]]. Somit werden über die Bundesliga und den [[Österreichischer Fußball-Cup 2019/20|ÖFB-Cup]] in der Saison 2019/20 zwei Startplätze für die Champions League und drei Startplätze für die Europa League ausgespielt. Der Meister der Bundesliga steigt im Play-off ein, der Vize-Meister startet in der zweiten Qualifikationsrunde; der Cupsieger ist für die [[UEFA Europa League 2019/20|UEFA Europa League]] startberechtigt, der Dritte sowie der Sieger des Europa-League-Playoffs spielen in der Qualifikation zu dieser.
 
 Der Letztplatzierte der höchsten Spielklasse muss in die 2. Liga absteigen.
 
@@ -159,7 +159,7 @@ PlotData=
   from: 0.5 till:1.0 shift:(25,0)  color:tan2
   from: 1.0 till:1.5 shift:(25,0)  color:black
   from: 1.5 till:8.5 shift:(25,0)  color:red
- 
+
 
 </timeline>
 </div>
@@ -198,7 +198,7 @@ PlotData=
 ===== Hinrunde =====
 {| class="wikitable mw-collapsible mw-collapsed"
 |-
-! Datum !! Heim !! Gäste !! Ergebnis !! Tore  !! Schiedsrichter !! Karten !! Zuschauer<ref name="FBOE">Laut [http://www.fussballoesterreich.at/foes/Home/ fussballoesterreich.at]</ref>
+! Datum !! Heim !! Gäste !! Ergebnis !! Tore  !! Schiedsrichter !! Karten !! Zuschauer
 |-
 |style="background:#DC143C"|'''Runde 1'''
 |-
@@ -208,7 +208,7 @@ PlotData=
 {{Gelb}}-WAC: [[Nemanja Rnić|Rnić]]&nbsp;(21.), [[Marcel Ritzmaier|Ritzmaier]]&nbsp;(45+1.), [[Romano Schmid|Schmid]]&nbsp;(82.)
 || 1.900
 |-
-| 27. Juli 2019 || Tirol || Austria || '''3:1''' (1:0) || [[Tarkan Serbest|Serbest]]&nbsp;(33.,&nbsp;ET), [[Clemens Walch|Walch]]&nbsp;(59.), [[Florian Buchacher|Buchacher]]&nbsp;(64.); [[Alexander Grünwald|Grünwald]]&nbsp;(68.) ||[[Christopher Jäger|Jäger]] || {{Gelb}}-Austria: [[Florian Klein|Klein]]&nbsp;(49.), [[Bright Edomwonyi|Edomwonyi]]&nbsp;(80.) 
+| 27. Juli 2019 || Tirol || Austria || '''3:1''' (1:0) || [[Tarkan Serbest|Serbest]]&nbsp;(33.,&nbsp;ET), [[Clemens Walch|Walch]]&nbsp;(59.), [[Florian Buchacher|Buchacher]]&nbsp;(64.); [[Alexander Grünwald|Grünwald]]&nbsp;(68.) ||[[Christopher Jäger|Jäger]] || {{Gelb}}-Austria: [[Florian Klein|Klein]]&nbsp;(49.), [[Bright Edomwonyi|Edomwonyi]]&nbsp;(80.)
 || 4.600
 |-
 | 28. Juli 2019 || LASK || Altach || '''2:0''' (1:0) || [[Samuel Tetteh|Tetteh]]&nbsp;(7.), [[Klauss (Fußballspieler)|Klauss]]&nbsp;(79.) || [[Harald Lechner|Lechner]] || {{Gelb}}-LASK: [[Thomas Goiginger|Goiginger]]&nbsp;(90.)
@@ -314,7 +314,7 @@ PlotData=
 <!--===== Rückrunde =====
 {| class="wikitable mw-collapsible mw-collapsed"
 |-
-! Datum !! Heim !! Gäste !! Ergebnis !! Tore  !! Schiedsrichter !! Karten !! Zuschauer<ref name="FBOE">Laut [http://www.fussballoesterreich.at/foes/Home/ fussballoesterreich.at]</ref>
+! Datum !! Heim !! Gäste !! Ergebnis !! Tore  !! Schiedsrichter !! Karten !! Zuschauer
 |-
 |style="background:#DC143C"|'''Runde 12'''
 |-
@@ -360,12 +360,12 @@ Die Kreuztabelle stellt die Ergebnisse aller Spiele dieser Saison dar. Die Heimm
 | class="hintergrundfarbe5" | '''U''' || || 0:1 || || || 5:0 || 5:2 ||  || ||
 |-
 | style="text-align: left;" | [[FK Austria Wien]] || || 0:3 ||
-| class="hintergrundfarbe5" | '''N'''  || || || 1:3 || || || 1:1 || || 
+| class="hintergrundfarbe5" | '''N'''  || || || 1:3 || || || 1:1 || ||
 |-
 | style="text-align: left;" | [[SK Sturm Graz]] || || 0:2 || ||
 | class="hintergrundfarbe5" | '''D'''  || 3:0 || 0:1 || || || || || 2:0
 |-
-| style="text-align: left;" | [[SKN St. Pölten]]  || 0:6 || || || || 
+| style="text-align: left;" | [[SKN St. Pölten]]  || 0:6 || || || ||
 | class="hintergrundfarbe5" | '''E'''  || 2:2 || || || || 1:3 ||
 |-
 | style="text-align: left;" | [[SK Rapid Wien]] || 0:2 || 1:2 || || || ||
@@ -438,7 +438,7 @@ PlotData=
 ===== Hinrunde =====
 {| class="wikitable mw-collapsible mw-collapsed"
 |-
-! Datum !! Heim !! Gäste !! Ergebnis !! Tore  !! Schiedsrichter !! Karten !! Zuschauer<ref name="FBOE">Laut [http://www.fussballoesterreich.at/foes/Home/ fussballoesterreich.at]</ref>
+! Datum !! Heim !! Gäste !! Ergebnis !! Tore  !! Schiedsrichter !! Karten !! Zuschauer
 |-
 |style="background:#DC143C"|'''Runde 1'''
 |-
@@ -454,7 +454,7 @@ Die Kreuztabelle stellt die Ergebnisse aller Spiele dieser Saison dar. Die Heimm
 
 {| class="wikitable" style="text-align:center;"
 |-
-! 2018/19<br /><small>'''Stand: '''</small> 
+! 2018/19<br /><small>'''Stand: '''</small>
 ! width="25px"|
 ! width="25px"|
 ! width="25px"|
@@ -542,7 +542,7 @@ PlotData=
 ===== Hinrunde =====
 {| class="wikitable mw-collapsible mw-collapsed"
 |-
-! Datum !! Heim !! Gäste !! Ergebnis !! Tore  !! Schiedsrichter !! Karten !! Zuschauer<ref name="FBOE">Laut [http://www.fussballoesterreich.at/foes/Home/ fussballoesterreich.at]</ref>
+! Datum !! Heim !! Gäste !! Ergebnis !! Tore  !! Schiedsrichter !! Karten !! Zuschauer
 |-
 |style="background:#DC143C"|'''Runde 1'''
 |-
@@ -558,7 +558,7 @@ Die Kreuztabelle stellt die Ergebnisse aller Spiele dieser Saison dar. Die Heimm
 
 {| class="wikitable" style="text-align:center;"
 |-
-! 2018/19<br /><small>'''Stand: '''</small> 
+! 2018/19<br /><small>'''Stand: '''</small>
 ! width="25px"|
 ! width="25px"|
 ! width="25px"|
@@ -607,7 +607,7 @@ In den Europa-League-Playoffs wird der letzte Europacup-Startplatz vergeben. Zun
 ! style="width:5em"|Rückspiel
 ! style="width:16em"|Tore
 |-
-|style="text-align: right;"| ''Sieger 1. Runde'' || : || style="text-align: left;"| ''Vierter Meistergruppe'' || : || || : || 
+|style="text-align: right;"| ''Sieger 1. Runde'' || : || style="text-align: left;"| ''Vierter Meistergruppe'' || : || || : ||
 |}
 -->
 
@@ -671,7 +671,7 @@ In den Europa-League-Playoffs wird der letzte Europacup-Startplatz vergeben. Zun
 | [[SK Sturm Graz]] -->
 |-
 |- style="background:#FFFFFF;" class="unsortable"
-! colspan="4" style="text-align:right; font-size:smaller;"| Stand: 15. September 2019 (7. Runde)<ref>[https://www.bundesliga.at/de/statistik/aktuelle-saison/tore/torschuetzenliste/ Torschützenliste Bundesliga] bundesliga.at, abgerufen am 19. August 2019</ref>
+! colspan="4" style="text-align:right; font-size:smaller;"| Stand: 15. September 2019 (7. Runde)
 |}
 
 ==== Vorlagenliste ====
@@ -732,7 +732,7 @@ In den Europa-League-Playoffs wird der letzte Europacup-Startplatz vergeben. Zun
 | {{AUT|Ziel=Patrick Farkas}}
 | [[FC Red Bull Salzburg]] -->
 |- style="background:#FFFFFF;" class="unsortable"
-! colspan="4" style="text-align:right; font-size:smaller;"| Stand: 15. September 2019 (7. Runde)<ref>[https://www.bundesliga.at/de/statistik/aktuelle-saison/vorlagen/ Vorlagenliste Bundesliga] bundesliga.at, abgerufen am 19. August 2019</ref>
+! colspan="4" style="text-align:right; font-size:smaller;"| Stand: 15. September 2019 (7. Runde)
 |}
 <!--
 ==== Erhaltene Karten ====
@@ -1108,8 +1108,8 @@ PlotData=
 | 26. Juli 2019 || Liefering || Amstetten || '''2:3''' (0:1) || [[David Affengruber (Fußballspieler, 2001)|Affengruber]]&nbsp;(52.), [[Chukwubuike Adamu|Adamu]]&nbsp;(90+1.); [[Daniel Maderner|Maderner]]&nbsp;(29.), [[David Peham|Peham]]&nbsp;(73.), [[David Peham|Peham]]&nbsp;(83.) || [[Andreas Heiß|Heiß]] || {{Gelb}}-Liefering: [[Alexander Prass|Prass]]&nbsp;(33.) <br> {{Gelb}}-Amstetten: [[Patrick Puchegger|Puchegger]]&nbsp;(15.) || 300
 |-
 | 28. Juli 2019 || FAC || GAK || '''2:0''' (1:0)  || [[Elias Felber|Felber]]&nbsp;(23.), [[Marco Sahanek|Sahanek]]&nbsp;(90+3.) || [[Sebastian Gishammer|Gishammer]] || {{Gelb}}-FAC: [[Bernhard Fila|Fila]]&nbsp;(37.), [[Marco Sahanek|Sahanek]]&nbsp;(61.) <br>
-{{Gelb}}-GAK: [[Dominik Hackinger|Hackinger]]&nbsp;(72.), [[Alexander Kogler|Kogler]]&nbsp;(89.) 
-|| 2.338 
+{{Gelb}}-GAK: [[Dominik Hackinger|Hackinger]]&nbsp;(72.), [[Alexander Kogler|Kogler]]&nbsp;(89.)
+|| 2.338
 |-
 |style="background:#DC143C"|'''Runde 2'''
 |-
@@ -1126,7 +1126,7 @@ PlotData=
 | 2. August 2019 || GAK || BW Linz || '''2:0''' (2:0) || [[Marco Perchtold|Perchtold]]&nbsp;(10.), [[Dominik Hackinger|Hackinger]]&nbsp;(42.) || [[Julian Weinberger|Weinberger]] || {{Gelb}}-GAK: [[Philipp Schellnegger|Schellnegger]]&nbsp;(55.), {{Gelb-Rot}}: [[Philipp Schellnegger|Schellnegger]]&nbsp;(63.), {{Gelb}}: [[Marco Perchtold|Perchtold]]&nbsp;(78.), [[Thomas Zündel|Zündel]]&nbsp;(84.) <br> {{Gelb}}-BW Linz: [[Martin Kreuzriegler|Kreuzriegler]]&nbsp;(50.) || 3.207
 |-
 | 4. August 2019 || Innsbruck || Dornbirn || '''1:0''' (1:0) || [[Elvin Ibrisimovic|Ibrisimovic]]&nbsp;(24.) || [[Manuel Schüttengruber|Schüttengruber]] || {{Gelb}}-Innsbruck: [[Alexander Gründler|Gründler]]&nbsp;(35.), [[Lukas Hupfauf|Hupfauf]]&nbsp;(69.), [[Raphael Gallé|Gallé]]&nbsp;(81.) <br> {{Gelb}}-Dornbirn: [[Franco Joppi|Joppi]]&nbsp;(31.), [[Anes Omerovic|Omerovic]]&nbsp;(65.), [[Deniz Mujić|Mujić]]&nbsp;(90+1.) || 2.045
-|- 
+|-
 | 4. August 2019 || Klagenfurt || Liefering || '''4:4''' (1:2) || [[Okan Aydın|Aydın]]&nbsp;(5.), [[Daniel Steinwender|Steinwender]]&nbsp;(51.), [[Darijo Pecirep|Pecirep]]&nbsp;(73.), [[Oliver Markoutz|Markoutz]]&nbsp;(90+4., S); [[Tobias Anselm|Anselm]]&nbsp;(20.), [[Chukwubuike Adamu|Adamu]]&nbsp;(45+3.), [[Tobias Anselm|Anselm]]&nbsp;(49.), [[Chukwubuike Adamu|Adamu]]&nbsp;(75.) || [[Lukas Gnam|Gnam]] || {{Rot}}-Klagenfurt: [[Maximiliano Moreira|Moreira]]&nbsp;(90+6.), {{Gelb}}: [[Kosmas Gezos|Gezos]]&nbsp;(40.), [[Žan Pelko|Pelko]]&nbsp;(90+9.) <br> {{Rot}}-Liefering: [[Alexander Prass|Prass]]&nbsp;(81.), {{Gelb}}: [[Luis Phelipe|Phelipe]]&nbsp;(40.), [[Alexander Prass|Prass]]&nbsp;(44.), [[Alois Oroz|Oroz]]&nbsp;(90+9.) || 1.798
 |-
 |style="background:#DC143C"|'''Runde 3'''
@@ -1321,7 +1321,7 @@ PlotData=
 |-
 | {{AUT|Ziel=Dominik Hackinger}}
 | [[Grazer AK]]
-<!-- 
+<!--
 |-
 | {{TUR|Ziel=Okan Aydın}}
 | [[SK Austria Klagenfurt (2007)|SK Austria Klagenfurt]]
@@ -1632,7 +1632,7 @@ Die Kreuztabelle stellt die Ergebnisse aller Spiele dieser Saison dar. Die Heimm
 
 {| class="wikitable" style="text-align:center;"
 |-
-! 2019/20<br /><small>'''Stand: 15. September 2019 (7. Runde)'''</small> 
+! 2019/20<br /><small>'''Stand: 15. September 2019 (7. Runde)'''</small>
 ! width="25px"| [[Datei:FC Wacker Innsbruck (altes Logo).svg|23px|FC Wacker Innsbruck]]
 ! width="25px"| [[Datei:SV Ried.svg|18px|SV Ried]]
 ! width="25px"| [[Datei:Blau Weiss.svg|22px|FC Blau-Weiß Linz]]
@@ -1680,7 +1680,7 @@ Die Kreuztabelle stellt die Ergebnisse aller Spiele dieser Saison dar. Die Heimm
 | style="text-align: left;" | [[SV Lafnitz]] || : || 0:1 || : || 0:0 || : || : || : || 0:3 || 2:0
 | class="hintergrundfarbe5" | '''0'''  || : || : || : || : || : || :
 |-
-| style="text-align: left;" | [[Young Violets Austria Wien|Young Violets]] || : || 0:0 || : || : || : || 0:2 || : || : || : || 2:3 
+| style="text-align: left;" | [[Young Violets Austria Wien|Young Violets]] || : || 0:0 || : || : || : || 0:2 || : || : || : || 2:3
 | class="hintergrundfarbe5" | '''1''' || : || 1:5 || : || : || :
 |-
 | style="text-align: left;" | [[SKU Amstetten]] || : || : || : || : || : || : || : || : || : || : || 3:2
@@ -1696,7 +1696,7 @@ Die Kreuztabelle stellt die Ergebnisse aller Spiele dieser Saison dar. Die Heimm
 | class="hintergrundfarbe5" | '''0'''  || :
 |-
 | style="text-align: left;" | [[FC Dornbirn 1913]] || : || : || : || : || 6:1 || 1:3 || : || 0:0 || 2:2 || : || : || : || : || : || :
-| class="hintergrundfarbe5" | '''•''' 
+| class="hintergrundfarbe5" | '''•'''
 |}
 
 === Spielstätten ===

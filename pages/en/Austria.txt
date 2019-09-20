@@ -20,16 +20,16 @@
 | capital = [[Vienna]]
 | coordinates = {{small|{{Coord|48|12|N|16|21|E|type:city}}}}
 | largest_city = capital
-| languages = [[German language|German]]{{ref label|aaa|a}}{{ref label|bbb|b}}
+| languages = [[German language|German]]
 | languages_type = [[Official language]]<br /> {{nobold|and [[national language]]}}
 | languages2 = {{plainlist|
 * [[Hungarian language|Hungarian]]
 * [[Slovene language|Slovene]]
-* [[Burgenland Croatian]]<ref>{{cite web|url=https://www.demokratiewebstatt.at/thema/sprachen/amtssprachen-in-oesterreich/die-verschiedenen-amtssprachen-in-oesterreich/|title=Die verschiedenen Amtssprachen in Österreich|website=DemokratieWEBstatt.at|access-date=23 May 2018|archive-url=https://web.archive.org/web/20180524084441/https://www.demokratiewebstatt.at/thema/sprachen/amtssprachen-in-oesterreich/die-verschiedenen-amtssprachen-in-oesterreich/|archive-date=24 May 2018|url-status=live|df=dmy-all}}</ref><ref>{{cite web |url=http://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Bundesnormen&Dokumentnummer=NOR40066723 |publisher=Rechtsinformationssystem des Bundes |title=Regional Languages of Austria |year=2013 |access-date=27 July 2013 |archive-url=https://web.archive.org/web/20131018115726/http://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Bundesnormen&Dokumentnummer=NOR40066723 |archive-date=18 October 2013 |url-status=live |df=dmy-all }}</ref>
+* [[Burgenland Croatian]]
  }}
 | languages2_type = Recognised languages
 | ethnic_groups = {{unbulleted list
-  | 81.1% [[Austrians]]<ref>{{cite web |url=http://medienservicestelle.at/migration_bewegt/wp-content/uploads/2012/07/IBIB_2012_Integrationsbericht.pdf |publisher=Statistik Austria |title=Kommission für Migrations und Integrationsforschung der Österreichischen Akademie der Wissenschaften |year=2012 |page=23 |trans-title=Commission for Migration and Integration Research of the Austrian Academy of Sciences |access-date=17 July 2012 |archive-url=https://web.archive.org/web/20171014093350/http://medienservicestelle.at/migration_bewegt/wp-content/uploads/2012/07/IBIB_2012_Integrationsbericht.pdf |archive-date=14 October 2017 |url-status=live |df=dmy-all }}</ref>
+  | 81.1% [[Austrians]]
   | 6.3% ex-[[Yugoslavs]]
   | 2.7% [[Germans]]
   | 2.2% [[Turks in Austria|Turks]]
@@ -80,33 +80,33 @@
 | area_rank = 113th <!-- Area rank should match [[List of countries and dependencies by area]] -->
 | area_sq_mi = 32,385.86 <!--Do not remove per [[WP:MOSNUM]]-->
 | percent_water = 1.7
-| population_estimate = {{increase}} 8,857,960<ref name="statistik-population">{{cite web|title=Population by Year-/Quarter-beginning|url=http://www.statistik.at/web_de/statistiken/menschen_und_gesellschaft/bevoelkerung/bevoelkerungsstand_und_veraenderung/bevoelkerung_zu_jahres-_quartalsanfang/023582.html|date=7 November 2018|access-date=12 June 2015|archive-url=https://web.archive.org/web/20150612161754/http://www.statistik.at/web_de/statistiken/menschen_und_gesellschaft/bevoelkerung/bevoelkerungsstand_und_veraenderung/bevoelkerung_zu_jahres-_quartalsanfang/023582.html|archive-date=12 June 2015|url-status=live|df=dmy-all}}</ref>
+| population_estimate = {{increase}} 8,857,960
 | population_estimate_year = October 2018
 | population_estimate_rank = 96th
 | population_density_km2 = 104
 | population_density_sq_mi = 262.6 <!--Do not remove per [[WP:MOSNUM]]-->
 | population_density_rank = 106th
-| GDP_PPP = $461.432 billion<ref name="imf2">{{cite web |url=http://www.imf.org/external/pubs/ft/weo/2018/01/weodata/weorept.aspx?sy=2017&ey=2020&scsm=1&ssd=1&sort=country&ds=.&br=1&pr1.x=70&pr1.y=9&c=122&s=NGDP_RPCH%2CNGDPD%2CPPPGDP%2CNGDPDPC%2CPPPPC&grp=0&a=|title=Austria |publisher=[[International Monetary Fund]]|date=1 April 2018|accessdate=23 July 2018}}</ref>
+| GDP_PPP = $461.432 billion
 | GDP_PPP_year = 2018
 | GDP_PPP_rank =
-| GDP_PPP_per_capita = $51,936<ref name=imf2/>
+| GDP_PPP_per_capita = $51,936
 | GDP_PPP_per_capita_rank = 17th
-| GDP_nominal = $477.672 billion<ref name=imf2/>
+| GDP_nominal = $477.672 billion
 | GDP_nominal_year = 2018
 | GDP_nominal_rank = 29th
-| GDP_nominal_per_capita = $53,764<ref name=imf2/>
+| GDP_nominal_per_capita = $53,764
 | GDP_nominal_per_capita_rank = 14th
 | Gini = 26.8 <!-- number only -->
 | Gini_year = 2018
 | Gini_change = decrease <!-- increase/decrease/steady -->
-| Gini_ref = <ref name=eurogini>{{cite web |url=https://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tessi190&plugin=1 |title=Gini coefficient of equivalised disposable income - EU-SILC survey |publisher=[[Eurostat]] |website=ec.europa.eu |access-date=7 March 2019 |archive-url=https://web.archive.org/web/20190320064533/https://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tessi190&plugin=1 |archive-date=20 March 2019 |url-status=live |df=dmy-all }}</ref>
+| Gini_ref =
 | Gini_rank = 14th
 | HDI = 0.908 <!-- number only -->
 | HDI_year = 2017<!-- Please use the year to which the data refers, not the publication year-->
 | HDI_change = increase<!--increase/decrease/steady-->
-| HDI_ref =<ref name="HDI">{{cite web |url=http://www.hdr.undp.org/en/2018-update |title=2018 Human Development Report |year=2018 |accessdate=14 September 2018 |publisher=United Nations Development Programme |archive-url=https://web.archive.org/web/20180914203906/http://hdr.undp.org/en/2018-update |archive-date=14 September 2018 |url-status=live |df=dmy-all }}</ref>
+| HDI_ref =
 | HDI_rank = 20th
-| currency = [[Euro]] ([[Euro sign|€]]){{ref label|ccc|c}}
+| currency = [[Euro]] ([[Euro sign|€]])
 | currency_code = EUR
 | time_zone = [[Central European Time|CET]]
 | utc_offset = +1
@@ -114,7 +114,7 @@
 | time_zone_DST = [[Central European Summer Time|CEST]]
 | drives_on = right
 | calling_code = [[Telephone numbers in Austria|+43]]
-| cctld = [[.at]]{{ref label|ddd|d}}
+| cctld = [[.at]]
 | footnote_a = {{note|aaa}} There is an official dictionary, the ''[[Österreichisches Wörterbuch]]'', published on commission by the [[Austrian Ministry of Education]].
 | footnote_b = {{note|bbb}} [[Burgenland Croatian|Croatian]], [[Czech language|Czech]], [[Hungarian language|Hungarian]], [[Romani language|Romani]], [[Slovak language|Slovak]], and [[Slovene language|Slovene]] are officially recognised by the [[European Charter for Regional or Minority Languages|European Charter for Regional or Minority Languages (ECRML)]].
 | footnote_c = {{note|ccc}} [[Austrian schilling]] before 1999; Virtual Euro since 1 January 1999; Euro since 1 January 2002.
@@ -122,8 +122,8 @@
 }}
 {{maplink|frame=yes|frame-width=265|type=line|stroke-width=3|text=Interactive map showing the border of Austria}}
 
-'''Austria''' ({{IPAc-en|audio=en-us-Austria.ogg|ˈ|ɒ|s|t|r|i|ə}}, {{IPAc-en|ˈ|ɔː|s|-}};<ref>{{citation|last=Roach|first=Peter|year=2011|title=Cambridge English Pronouncing Dictionary|edition=18th|place=Cambridge|publisher=Cambridge University Press|isbn=9780521152532}}</ref> {{lang-de|Österreich}} {{IPA-de|ˈøːstɐraɪç||De-Österreich.oga}}), officially the&nbsp;'''Republic of Austria''' ({{lang-de|Republik Österreich|links=no}}, {{Audio|Republik Österreich.ogg|listen}}), is a country in [[Central Europe]] comprising nine [[States of Austria|federated states]]. Its [[Capital city|capital]], largest city and one of nine states is [[Vienna]]. Austria has an area of {{convert|83879|km2|sqmi|0|abbr=on}}, a population of nearly nine million [[Austrians|people]] and a [[nominal GDP]] of $477 billion. It is bordered by the [[Czech Republic]] and [[Germany]] to the north, [[Hungary]] and [[Slovakia]] to the east, [[Slovenia]] and [[Italy]] to the south, and [[Switzerland]] and [[Liechtenstein]] to the west. The terrain is [[landlocked]] and highly mountainous, lying within the [[Alps]]; only 32% of the country is below {{convert|500|m|ft|0|abbr=on}}, and its highest point is {{convert|3798|m|ft|0|abbr=on}}.<ref name="CIA">{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/geos/au.html |title=Austria |website=[[The World Factbook]] |date=14 May 2009 |publisher=[[Central Intelligence Agency]] |accessdate=31 May 2009 |archiveurl=https://web.archive.org/web/20090610113837/https://www.cia.gov/library/publications/the-world-factbook/geos/AU.html| archivedate=10 June 2009 |url-status=live }}</ref> The majority of the population speaks local [[Bavarian language|Bavarian dialects]] as their native language,<ref name="Language">{{cite web |url=http://www.statistik.at/web_de/static/bevoelkerung_2001_nach_umgangssprache_staatsangehoerigkeit_und_geburtsland_022896.pdf |title=Die Bevölkerung nach Umgangssprache, Staatsangehörigkeit und Geburtsland |publisher=Statistik Austria |accessdate=17 November 2010 |archive-url=https://web.archive.org/web/20101113171636/http://www.statistik.at/web_de/static/bevoelkerung_2001_nach_umgangssprache_staatsangehoerigkeit_und_geburtsland_022896.pdf |archive-date=13 November 2010 |url-status=live |df=dmy-all }}</ref> and [[German language|German]] in its standard form is the country's [[official language]].<ref name="Britannica">{{cite web |url=http://www.britannica.com/EBchecked/topic/44183/Austria |title=Austria |date=31 May 2009 |website=[[Encyclopædia Britannica]] |accessdate=31 May 2009 |archiveurl=https://web.archive.org/web/20090419153631/http://www.britannica.com/EBchecked/topic/44183/Austria |archivedate=19 April 2009 |url-status=live}}</ref> Other regional languages are [[Hungarian language|Hungarian]], [[Burgenland Croatian]], and [[Slovene language|Slovene]].<ref name="CIA"/>
+'''Austria''' ({{IPAc-en|audio=en-us-Austria.ogg|ˈ|ɒ|s|t|r|i|ə}}, {{IPAc-en|ˈ|ɔː|s|-}}; {{lang-de|Österreich}} {{IPA-de|ˈøːstɐraɪç||De-Österreich.oga}}), officially the&nbsp;'''Republic of Austria''' ({{lang-de|Republik Österreich|links=no}}, {{Audio|Republik Österreich.ogg|listen}}), is a country in [[Central Europe]] comprising nine [[States of Austria|federated states]]. Its [[Capital city|capital]], largest city and one of nine states is [[Vienna]]. Austria has an area of {{convert|83879|km2|sqmi|0|abbr=on}}, a population of nearly nine million [[Austrians|people]] and a [[nominal GDP]] of $477 billion. It is bordered by the [[Czech Republic]] and [[Germany]] to the north, [[Hungary]] and [[Slovakia]] to the east, [[Slovenia]] and [[Italy]] to the south, and [[Switzerland]] and [[Liechtenstein]] to the west. The terrain is [[landlocked]] and highly mountainous, lying within the [[Alps]]; only 32% of the country is below {{convert|500|m|ft|0|abbr=on}}, and its highest point is {{convert|3798|m|ft|0|abbr=on}}. The majority of the population speaks local [[Bavarian language|Bavarian dialects]] as their native language, and [[German language|German]] in its standard form is the country's [[official language]]. Other regional languages are [[Hungarian language|Hungarian]], [[Burgenland Croatian]], and [[Slovene language|Slovene]].
 
 Austria played a central role in [[European history]] from the late [[18th century|18th]] to the early [[20th century]]. It initially emerged as a [[Margraviate of Austria|margraviate]] around 976 and developed into a [[Duchy of Austria|duchy]] and later [[Archduchy of Austria|archduchy]]. In the [[16th century]], Austria started serving as the heart of the [[Habsburg Monarchy]] and the junior branch of the [[House of Habsburg]] – one of the most influential [[royal house]]s in history. As archduchy, it was a major component and administrative centre of the [[Holy Roman Empire]]. Following the Holy Roman Empire's dissolution, Austria founded [[Austrian Empire|its own empire]] in the [[19th century]], which became a [[great power]] and the leading force of the [[German Confederation]]. Subsequent to the [[Austro-Prussian War]] and the [[Austro-Hungarian Compromise of 1867|establishment of a union]] with [[Kingdom of Hungary|Hungary]], the [[Austro-Hungarian Empire]] was created and Austria was no longer involved in the affairs of the other German States. Austria was involved in both [[world war]]s; it started the [[World War I|first one]] under Emperor [[Franz Joseph I of Austria|Franz Joseph]] and was the birthplace of [[Adolf Hitler]], who provoked the [[World War II|second one]].
 
-Austria is a [[Parliamentarism|parliamentary]] [[representative democracy]] with a [[President of Austria|President]] as head of state and a [[Chancellor of Austria|Chancellor]] as head of government. Major [[List of cities and towns in Austria|urban areas of Austria]] include [[Graz]], [[Linz]], [[Salzburg]] and [[Innsbruck]]. Austria is consistently ranked as one of the [[List of countries by GDP (nominal) per capita|richest countries in the world]] by per capita GDP terms. The country has developed a [[list of countries by Human Development Index|high standard of living]] and in 2018 was ranked 20th in the world for its [[Human Development Index]]. The republic [[Declaration of Neutrality|declared]] its perpetual [[Neutral country|neutrality]] in foreign political affairs in 1955. Austria has been a member of the United Nations since 1955 and<ref>Jelavich 267</ref> [[Accession of Austria to the European Union|joined the European Union]] in 1995.<ref name="CIA" /> It harbours the [[Organization for Security and Co-operation in Europe|OSCE]] and [[OPEC]] and is a founding member of the [[Organisation for Economic Co-operation and Development|OECD]] and [[Interpol]].<ref name="OECD">{{cite web|url=http://www.oecd.org/about/0,3347,en_33873108_33873245_1_1_1_1_1,00.html |title=Austria About |publisher=OECD |accessdate=20 May 2009 |archiveurl=https://web.archive.org/web/20090506022708/http://www.oecd.org/about/0%2C3347%2Cen_33873108_33873245_1_1_1_1_1%2C00.html |archivedate=6 May 2009 |url-status=live }}</ref> Austria also signed the [[Schengen Agreement]] in 1995,<ref name="Schengen">{{cite web |url=http://migration.ucdavis.edu/mn/more.php?id=643_0_4_0 |title=Austria joins Schengen |date=May 1995 |website=Migration News |accessdate=30 May 2009 |archive-url=https://web.archive.org/web/20090707183649/http://migration.ucdavis.edu/mn/more.php?id=643_0_4_0 |archive-date=7 July 2009 |url-status=live |df=dmy-all }}</ref> and adopted the [[euro]] currency in 1999.<ref>{{cite web|url=https://ec.europa.eu/info/business-economy-euro/euro-area/euro/eu-countries-and-euro/austria-and-euro_en|title=Austria and the euro|website=European Commission - European Commission|access-date=7 January 2018|archive-url=https://web.archive.org/web/20180108064042/https://ec.europa.eu/info/business-economy-euro/euro-area/euro/eu-countries-and-euro/austria-and-euro_en|archive-date=8 January 2018|url-status=live|df=dmy-all}}</ref>
+Austria is a [[Parliamentarism|parliamentary]] [[representative democracy]] with a [[President of Austria|President]] as head of state and a [[Chancellor of Austria|Chancellor]] as head of government. Major [[List of cities and towns in Austria|urban areas of Austria]] include [[Graz]], [[Linz]], [[Salzburg]] and [[Innsbruck]]. Austria is consistently ranked as one of the [[List of countries by GDP (nominal) per capita|richest countries in the world]] by per capita GDP terms. The country has developed a [[list of countries by Human Development Index|high standard of living]] and in 2018 was ranked 20th in the world for its [[Human Development Index]]. The republic [[Declaration of Neutrality|declared]] its perpetual [[Neutral country|neutrality]] in foreign political affairs in 1955. Austria has been a member of the United Nations since 1955 and [[Accession of Austria to the European Union|joined the European Union]] in 1995. It harbours the [[Organization for Security and Co-operation in Europe|OSCE]] and [[OPEC]] and is a founding member of the [[Organisation for Economic Co-operation and Development|OECD]] and [[Interpol]]. Austria also signed the [[Schengen Agreement]] in 1995, and adopted the [[euro]] currency in 1999.
