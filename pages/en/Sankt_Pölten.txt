@@ -1,0 +1,67 @@
+{{Use dmy dates|date=November 2018}}
+{{Infobox settlement
+| name            = Sankt Pölten
+| native_name     = 
+| settlement_type = 
+<!-- Images     -->
+| image_skyline   = Sankt Poelten.jpg
+| imagesize       = 270px
+| image_caption   = A view of Sankt Pölten in 2005
+| image_shield    = AUT Sankt Poelten COA.svg
+| shield_size     = 80x110px
+| shield_link     = 
+<!-- Maps           -->
+| pushpin_map         = Austria Lower Austria#Austria
+| pushpin_mapsize     = 270
+| pushpin_map_caption = Location within Austria
+| image_map           = Karte A Noe P.svg
+| mapsize             = 260x260px
+| map_alt             =
+| map_caption         = Location of St. Pölten within Lower Austria
+<!-- Location    -->
+| coordinates       = {{Coord|48|12|00|N|15|37|00|E|display=inline,title}}
+| subdivision_type  = [[List of sovereign states|Country]]
+| subdivision_name  = {{AUT}}
+| subdivision_type1 = [[States of Austria|State]]
+| subdivision_name1 = [[Lower Austria]]
+| subdivision_type2 = [[District (Austria)|District]]
+| subdivision_name2 = [[Statutory city (Austria)|Statutory city]]
+| parts_type        = 
+| parts_style       = para
+| p1                = 
+<!-- Leaders -->
+| leader_title  = [[Burgomaster|Mayor]]
+| leader_name   = Matthias Stadler
+| leader_party  = {{Polparty|Austria| [[Social Democratic Party of Austria|SPÖ]] }}
+| leader_title1 = 
+| leader_name1  = 
+<!-- Statistics -->
+| area_footnotes   = {{Austria population Wikidata|area_footnotes}}
+| area_total_km2   = {{Austria population Wikidata|area_total_km2}}
+| area_metro_km2   = 
+| elevation_m      = 267
+| elevation_max_m  = 
+| elevation_min_m  = 
+| population_as_of = {{Austria population Wikidata|population_as_of}}
+| population_footnotes = {{Austria population Wikidata|population_footnotes}}
+| population_total = {{Austria population Wikidata|population_total}}
+| population_urban =  
+| population_metro =  
+| population_note  = 
+| population_density_km2 = auto
+| established_title = 
+| established_date  = 
+| timezone          = [[Central European Time|CET]]
+| timezone_DST      = [[Central European Summer Time|CEST]]
+| utc_offset        = +1
+| utc_offset_DST    = +2
+| registration_plate = [[Vehicle registration plates of Austria|P]]
+| postal_code_type   = [[List of postal codes in Austria|Postal code]]
+| postal_code        = 3100, 3104, 3105, 3106, 3107, 3108, 3140, 3151, 3385
+| area_code_type = [[Telephone numbers in Austria|Area code]]
+| area_code      = 02742
+| website   = {{URL|www.st-poelten.gv.at}}
+| footnotes = 
+}}
+
+'''Sankt Pölten''' ({{IPA-de|zaŋkt ˈpœltn̩|-|De-at St Pölten.ogg}}), mostly abbreviated to the official name '''St. Pölten''',<ref>{{Cite web|url=https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=LrNO&Gesetzesnummer=20000101|title=St. Pöltner Stadtrecht 1977|accessdate=February 28, 2015 }}</ref> is the capital and largest city of the [[States of Austria|State]] of [[Lower Austria]] in northeast Austria, with 52,716 inhabitants as of 1 January 2015. St Pölten is a city with its own statute (or ''[[Statutarstadt]]'') and therefore it is both a municipality and a district in the ''[[Mostviertel]]''.
