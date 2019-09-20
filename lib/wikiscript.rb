@@ -51,11 +51,11 @@ module Wikiscript
     }x
 
 
-  def self.unlink( value )
+  def self.unlink( text )
     ## replace ALL wiki links with title (or link)
     ##  e.g. [[Santiago]] ([[La Florida, Chile|La Florida]])
     ##   =>    Santiago (La Florida)
-    value = value.gsub( LINK_PATTERN ) do |_|
+    text = text.gsub( LINK_PATTERN ) do |_|
       link  = $~[:link]
       title = $~[:title]
 
@@ -66,14 +66,16 @@ module Wikiscript
       end
     end
 
-    value.strip
+    text.strip
+  end
+  class << self
+    alias_method :flatten_links, :unlink
   end
 
-
-  def self.parse_link( value )     ## todo/change: find a better name - use match_link/etc. - why? why not?
+  def self.parse_link( text )     ## todo/change: find a better name - use match_link/etc. - why? why not?
     ##  find first matching link
     ##   return [nil,nil] if nothing found
-    if (m = LINK_PATTERN.match( value ))
+    if (m = LINK_PATTERN.match( text ))
       link  = m[:link]
       title = m[:title]
 
@@ -83,6 +85,17 @@ module Wikiscript
     else
       [nil,nil]
     end
+  end
+
+  ############################
+  ## more convenience shortcuts / helpers
+  def self.parse( text )        PageReader.parse( text );  end
+  def self.parse_table( text )  TableReader.parse_table( text );  end
+
+  def self.get( title, lang: Wikiscript.lang )      Page.get( title, lang: lang ); end
+  class << self
+    alias_method :fetch,    :get
+    alias_method :download, :get
   end
 
 end # module Wikiscript

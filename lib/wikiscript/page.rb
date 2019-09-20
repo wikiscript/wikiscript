@@ -6,15 +6,24 @@ module Wikiscript
 
     include LogUtils::Logging
 
-    attr_reader :title
+    attr_reader :title, :lang
 
-    def initialize( title, text: nil )
+
+    def self.get( title, lang: Wikiscript.lang )    ## todo/check: add a fetch/download alias - why? why not?
+      o = new( title: title, lang: lang )
+      ## o.text   ## "force" download / fetch
+      o
+    end
+
+
+    def initialize( text=nil, title: nil, lang: Wikiscript.lang )
       ## todo: check title
       ## replace title spaces w/ _ ????
       ##  to allow "pretty" titles - why? why not??
 
-      @title = title
       @text  = text
+      @title = title
+      @lang  = lang
     end
 
     def text
@@ -22,7 +31,7 @@ module Wikiscript
     end
 
     def download_text
-      Client.new.text( @title )
+      Client.new.text( @title, lang: @lang )
     end
 
     def parse   ## todo/change: use/find a different name e.g. doc/elements/etc. - why? why not?

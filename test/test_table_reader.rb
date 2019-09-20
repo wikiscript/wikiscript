@@ -10,7 +10,7 @@ require 'helper'
 class TestTableReader < MiniTest::Test
 
   def test_basic
-    tables = Wikiscript::TableReader.parse( <<TXT )
+    table = Wikiscript.parse_table( <<TXT )
 {|
 |-
 ! header1
@@ -27,8 +27,6 @@ class TestTableReader < MiniTest::Test
 |}
 TXT
 
-    table = tables[0]
-    assert_equal 1, tables.size     ## one table
     assert_equal 3, table.size      ## three rows
     assert_equal ['header1', 'header2', 'header3'], table[0]
     assert_equal ['row1cell1', 'row1cell2', 'row1cell3'], table[1]
@@ -36,7 +34,7 @@ TXT
   end
 
   def test_basic_ii     ##  with optional (missing) row divider before headers
-    tables = Wikiscript::TableReader.parse( <<TXT )
+    table = Wikiscript.parse_table( <<TXT )
 {|
 ! header1 !! header2 !! header3
 |-
@@ -46,8 +44,6 @@ TXT
 |}
 TXT
 
-    table = tables[0]
-    assert_equal 1, tables.size     ## one table
     assert_equal 3, table.size      ## three rows
     assert_equal ['header1', 'header2', 'header3'], table[0]
     assert_equal ['row1cell1', 'row1cell2', 'row1cell3'], table[1]
@@ -55,7 +51,7 @@ TXT
   end
 
   def test_strip_attributes_and_emphases
-    tables = Wikiscript::TableReader.parse( <<TXT )
+    table = Wikiscript.parse_table( <<TXT )
 {|
 |-
 ! style="width:200px;"|Club
@@ -69,8 +65,6 @@ TXT
 |}
 TXT
 
-table = tables[0]
-assert_equal 1, tables.size     ## one table
 assert_equal 4, table.size      ## four rows
 assert_equal ['Club', 'City'], table[0]
 assert_equal ['[[Biu Chun Rangers]]',            '[[Sham Shui Po]]'], table[1]

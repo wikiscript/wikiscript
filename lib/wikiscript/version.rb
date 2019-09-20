@@ -1,6 +1,6 @@
 
 module Wikiscript
-   VERSION = '0.2.0'
+   VERSION = '0.3.0'
 
    def self.banner
      "wikiscript/#{VERSION} on Ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"

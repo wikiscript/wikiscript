@@ -11,7 +11,7 @@ require 'helper'
 class TestPageReader < MiniTest::Test
 
   def test_basic
-    el = Wikiscript::PageReader.parse( <<TXT )
+    el = Wikiscript.parse( <<TXT )
 =Heading 1==
 ==Heading 2==
 ===Heading 3===
@@ -44,7 +44,7 @@ TXT
   end
 
   def test_parse
-    page = Wikiscript::Page.new( 'Test', text: <<TXT )
+    page = Wikiscript::Page.new( <<TXT )
 =Heading 1==
 ==Heading 2==
 ===Heading 3===
