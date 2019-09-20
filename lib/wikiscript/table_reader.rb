@@ -65,21 +65,31 @@ class TableReader
            row = []
            rows << row
          end
-         ## add each value one-by-one for now (to keep (same) row reference)
-         ##   note: also strip leading (optional) attributes
-         values.each do |value|
-           row <<  strip_emphases( strip_attributes( value.strip ))
+         if values.empty?
+           ## note: support continuing column text in next line
+           row << String.new
+         else
+           ## add each value one-by-one for now (to keep (same) row reference)
+           ##   note: also strip leading (optional) attributes
+           values.each do |value|
+             row <<  strip_emphases( strip_attributes( value.strip ))
+           end
          end
       elsif inside_table && line.start_with?( '|' )   ## table data
          values = line.sub( '|', '' ).strip.split( '||' )
-         ## add each value one-by-one for now (to keep (same) row reference)
-         values.each do |value|
-           row <<  strip_emphases( strip_attributes( value.strip ))
+         if values.empty?
+           ## note: support continuing column text in next line
+           row << String.new
+         else
+           ## add each value one-by-one for now (to keep (same) row reference)
+           values.each do |value|
+             row << strip_emphases( strip_attributes( value.strip ))
+           end
          end
       elsif inside_table
-        puts "!! ERROR !! unknown line type inside table:"
-        puts line
-        exit 1
+        ## note: support continuing column text in next line
+        ##  todo/check: for now doesn't support multi-line just simple continuing line - fix later if needed!!!
+        row[-1] << line
       else
         puts "!! ERROR !! unknown line type outside (before or after) table:"
         puts line

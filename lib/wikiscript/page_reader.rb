@@ -53,9 +53,11 @@ class PageReader
       elsif inside_table
          table_txt << line << "\n"
       else
-        puts "** !!! ERROR !!! unknown line type in wiki page:"
-        pp line
-        exit 1
+        ## note: skip unknown line types for now
+        
+        ## puts "** !!! ERROR !!! unknown line type in wiki page:"
+        ## pp line
+        ## exit 1
       end
     end
     page
