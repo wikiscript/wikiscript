@@ -69,7 +69,8 @@ private
         t
       else
         logger.error "fetch HTTP - #{response.code} #{response.message}"
-        nil
+        exit 1    ### exit for now on error - why? why not?
+        ## nil
       end
     end
 
