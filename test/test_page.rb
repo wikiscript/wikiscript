@@ -4,7 +4,7 @@
 require 'helper'
 
 
-class TestPage < MiniTest::Unit::TestCase
+class TestPage < MiniTest::Test
 
   def setup
     Wikiscript.lang = :en
@@ -18,10 +18,10 @@ class TestPage < MiniTest::Unit::TestCase
     pp text[0..600]
 
     ## check for some snippets
-    assert( /{{Infobox country/ =~ text ) 
-    assert( /common_name = Austria/ =~ text )
-    assert( /capital = \[\[Vienna\]\]/ =~ text )
-    assert( /The origins of modern-day Austria date back to the time/ =~ text )
+    assert /{{Infobox country/ =~ text
+    assert /common_name = Austria/ =~ text
+    assert /capital = \[\[Vienna\]\]/ =~ text
+    assert /The origins of modern-day Austria date back to the time/ =~ text
   end
 
   def test_sankt_poelten_en
@@ -32,10 +32,9 @@ class TestPage < MiniTest::Unit::TestCase
     pp text[0..600]
 
     ## check for some snippets
-    assert( /{{Infobox Town AT/ =~ text ) 
-    assert( /Name\s+=\s+Sankt Pölten/ =~ text )
-    assert( /'''Sankt Pölten''' \(''St. Pölten''\) is the capital city of/ =~ text )
+    assert /{{Infobox Town AT/ =~ text
+    assert /Name\s+=\s+Sankt Pölten/ =~ text
+    assert /'''Sankt Pölten''' \(''St. Pölten''\) is the capital city of/ =~ text
   end
 
 end # class TestPage
-
