@@ -11,7 +11,13 @@ module Wikiscript
 
     def self.get( title, lang: Wikiscript.lang )    ## todo/check: add a fetch/download alias - why? why not?
       o = new( title: title, lang: lang )
-      ## o.text   ## "force" download / fetch
+      o.get  ## "force" refresh text (get/fetch/download)
+      o
+    end
+
+    def self.read( path )
+      text = File.open( path, 'r:utf-8' ).read
+      o = new( text, title: "File:#{path}" )   ## use auto-generated File:<path> title path - why? why not?
       o
     end
 
@@ -27,12 +33,18 @@ module Wikiscript
     end
 
     def text
-      @text ||= download_text   # cache text (from request)
+      @text ||= get   # cache text (from request)
     end
 
-    def download_text
-      Client.new.text( @title, lang: @lang )
+
+    def get    ## "force" refresh text (get/fetch/download)
+      @text = Client.new.text( @title, lang: @lang )
+      @text
     end
+    alias_method :fetch,    :get
+    alias_method :download, :get
+
+
 
     def parse   ## todo/change: use/find a different name e.g. doc/elements/etc. - why? why not?
       PageReader.parse( text )

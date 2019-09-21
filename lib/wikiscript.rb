@@ -92,6 +92,7 @@ module Wikiscript
   def self.parse( text )        PageReader.parse( text );  end
   def self.parse_table( text )  TableReader.parse_table( text );  end
 
+  def self.read( path )                             Page.read( path ); end
   def self.get( title, lang: Wikiscript.lang )      Page.get( title, lang: lang ); end
   class << self
     alias_method :fetch,    :get
