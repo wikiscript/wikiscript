@@ -153,7 +153,7 @@ pp table
 
 ### Links
 
-Use `parse_link` to split links. Example:
+Split links into two parts. Note: The alternate link title is optional. Example:
 
 ``` ruby
 link, title = Wikiscript.parse_link( '[[La Florida, Chile|La Florida]]' )
@@ -171,8 +171,8 @@ title  #=> nil
 
 ### Document Element Structure
 
-Use `parse` to get the document's element structure.
-Note: For now only headings (`h1`, `h2`, `h3`, ...) and tables are supported.
+Get the document's element structure.
+Note: For now only section headings (`h1`, `h2`, `h3`, ...) and tables are supported.
 Example:
 
 ``` ruby
