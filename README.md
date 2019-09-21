@@ -87,6 +87,7 @@ TXT
 
 # -or-
 
+table = Wikiscript.parse_table( <<TXT )
 {|
 |-
 !
