@@ -5,7 +5,7 @@ Hoe.spec 'wikiscript' do
 
   self.version = Wikiscript::VERSION
 
-  self.summary = 'wikiscript - scripts for wikipedia (get wikitext for page etc.)'
+  self.summary = "wikiscript - scripts for wikipedia (get wikitext for page, parse tables 'n' links, etc.)"
   self.description = summary
 
   self.urls = ['https://github.com/wikiscript/wikiscript']
