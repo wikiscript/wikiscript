@@ -11,7 +11,7 @@ require 'helper'
 class TestPageReader < MiniTest::Test
 
   def test_basic
-    el = Wikiscript.parse( <<TXT )
+    nodes = Wikiscript.parse( <<TXT )
 =Heading 1==
 ==Heading 2==
 ===Heading 3===
@@ -32,15 +32,15 @@ class TestPageReader < MiniTest::Test
 |}
 TXT
 
-    pp el
+    pp nodes
 
-    assert_equal 4, el.size
-    assert_equal [:h1, 'Heading 1'],  el[0]
-    assert_equal [:h2, 'Heading 2'],  el[1]
-    assert_equal [:h3, 'Heading 3'],  el[2]
+    assert_equal 4, nodes.size
+    assert_equal [:h1, 'Heading 1'],  nodes[0]
+    assert_equal [:h2, 'Heading 2'],  nodes[1]
+    assert_equal [:h3, 'Heading 3'],  nodes[2]
     assert_equal [:table, [['header1', 'header2', 'header3'],
                            ['row1cell1', 'row1cell2', 'row1cell3'],
-                           ['row2cell1', 'row2cell2', 'row2cell3']]],  el[3]
+                           ['row2cell1', 'row2cell2', 'row2cell3']]],  nodes[3]
   end
 
   def test_parse
@@ -65,16 +65,53 @@ TXT
 |}
 TXT
 
-    el = page.parse
-    pp el
+    nodes = page.parse
+    pp nodes
 
-    assert_equal 4, el.size
-    assert_equal [:h1, 'Heading 1'],  el[0]
-    assert_equal [:h2, 'Heading 2'],  el[1]
-    assert_equal [:h3, 'Heading 3'],  el[2]
+    assert_equal 4, nodes.size
+    assert_equal [:h1, 'Heading 1'],  nodes[0]
+    assert_equal [:h2, 'Heading 2'],  nodes[1]
+    assert_equal [:h3, 'Heading 3'],  nodes[2]
     assert_equal [:table, [['header1', 'header2', 'header3'],
                            ['row1cell1', 'row1cell2', 'row1cell3'],
-                           ['row2cell1', 'row2cell2', 'row2cell3']]],  el[3]
+                           ['row2cell1', 'row2cell2', 'row2cell3']]],  nodes[3]
+  end
+
+  def test_each
+    page = Wikiscript::Page.new( <<TXT )
+=Heading 1==
+==Heading 2==
+===Heading 3===
+
+{|
+|-
+! header1
+! header2
+! header3
+|-
+| row1cell1
+| row1cell2
+| row1cell3
+|-
+| row2cell1
+| row2cell2
+| row2cell3
+|}
+TXT
+
+    nodes = []
+    page.each do |node|
+      nodes << node
+    end
+    pp nodes
+
+    assert_equal 4, nodes.size
+    assert_equal [:h1, 'Heading 1'],  nodes[0]
+    assert_equal [:h2, 'Heading 2'],  nodes[1]
+    assert_equal [:h3, 'Heading 3'],  nodes[2]
+    assert_equal [:table, [['header1', 'header2', 'header3'],
+                           ['row1cell1', 'row1cell2', 'row1cell3'],
+                           ['row2cell1', 'row2cell2', 'row2cell3']]],  nodes[3]
   end
 
 end # class TestPageReader

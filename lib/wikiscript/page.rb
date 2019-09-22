@@ -33,11 +33,23 @@ module Wikiscript
     end
 
     def text
-      @text ||= get   # cache text (from request)
+      @text ||= get        # cache text (from request)
+    end
+
+    def nodes
+      @nodes ||= parse     # cache text (from parse)
+    end
+
+    def each   ## loop over all nodes / elements -note: nodes is a (flat) list (array) for now
+      nodes.each do |node|
+        yield( node )
+      end
     end
 
 
     def get    ## "force" refresh text (get/fetch/download)
+      @nodes = nil  ## note: reset cached parsed nodes too
+
       @text = Client.new.text( @title, lang: @lang )
       @text
     end
@@ -45,9 +57,9 @@ module Wikiscript
     alias_method :download, :get
 
 
-
     def parse   ## todo/change: use/find a different name e.g. doc/elements/etc. - why? why not?
-      PageReader.parse( text )
+      @nodes = PageReader.parse( text )
+      @nodes
     end
   end # class Page
 end # Wikiscript

@@ -20,10 +20,10 @@ page.text
 prints
 
 ```
-The '''2022 FIFA World Cup''' is scheduled to be the 22nd edition of the [[FIFA World Cup]], 
-the quadrennial international men's [[association football]] championship contested by the 
-[[List of men's national association football teams|national teams]] of the member associations of [[FIFA]]. 
-It is scheduled to take place in [[Qatar]] in 2022. This will be the first World Cup ever to be held 
+The '''2022 FIFA World Cup''' is scheduled to be the 22nd edition of the [[FIFA World Cup]],
+the quadrennial international men's [[association football]] championship contested by the
+[[List of men's national association football teams|national teams]] of the member associations of [[FIFA]].
+It is scheduled to take place in [[Qatar]] in 2022. This will be the first World Cup ever to be held
 in the [[Arab world]] and the first in a Muslim-majority country...
 ```
 
@@ -31,10 +31,10 @@ Or build your own page from scratch (no download):
 
 ``` ruby
 page = Wikiscript::Page.new( <<TXT, title: '2022_FIFA_World_Cup' )
-The '''2022 FIFA World Cup''' is scheduled to be the 22nd edition of the [[FIFA World Cup]], 
-the quadrennial international men's [[association football]] championship contested by the 
-[[List of men's national association football teams|national teams]] of the member associations of [[FIFA]]. 
-It is scheduled to take place in [[Qatar]] in 2022. This will be the first World Cup ever to be held 
+The '''2022 FIFA World Cup''' is scheduled to be the 22nd edition of the [[FIFA World Cup]],
+the quadrennial international men's [[association football]] championship contested by the
+[[List of men's national association football teams|national teams]] of the member associations of [[FIFA]].
+It is scheduled to take place in [[Qatar]] in 2022. This will be the first World Cup ever to be held
 in the [[Arab world]] and the first in a Muslim-majority country...
 TXT
 page.text
@@ -43,10 +43,10 @@ page.text
 prints
 
 ```
-The '''2022 FIFA World Cup''' is scheduled to be the 22nd edition of the [[FIFA World Cup]], 
-the quadrennial international men's [[association football]] championship contested by the 
-[[List of men's national association football teams|national teams]] of the member associations of [[FIFA]]. 
-It is scheduled to take place in [[Qatar]] in 2022. This will be the first World Cup ever to be held 
+The '''2022 FIFA World Cup''' is scheduled to be the 22nd edition of the [[FIFA World Cup]],
+the quadrennial international men's [[association football]] championship contested by the
+[[List of men's national association football teams|national teams]] of the member associations of [[FIFA]].
+It is scheduled to take place in [[Qatar]] in 2022. This will be the first World Cup ever to be held
 in the [[Arab world]] and the first in a Muslim-majority country...
 ```
 
@@ -176,7 +176,7 @@ Note: For now only section headings (`h1`, `h2`, `h3`, ...) and tables are suppo
 Example:
 
 ``` ruby
-el = Wikiscript.parse( <<TXT )
+nodes = Wikiscript.parse( <<TXT )
 =Heading 1==
 ==Heading 2==
 ===Heading 3===
@@ -197,9 +197,9 @@ el = Wikiscript.parse( <<TXT )
 |}
 TXT
 
-pp el
+pp nodes
 #=> [[:h1, "Heading 1"],
-#    [:h2, "Heading 2"], 
+#    [:h2, "Heading 2"],
 #    [:h3, "Heading 3"],
 #    [:table, [["header1", "header2", "header3"],
 #              ["row1cell1", "row1cell2", "row1cell3"],
@@ -207,7 +207,7 @@ pp el
 ```
 
 
-That's all for now. More functionality will get added over time. 
+That's all for now. More functionality will get added over time.
 
 
 
