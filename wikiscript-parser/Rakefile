@@ -1,0 +1,29 @@
+require 'hoe'
+require './lib/wikiscript-parser/version.rb'
+
+Hoe.spec 'wikiscript-parser' do
+
+  self.version = Wikiscript::Module::Parser::VERSION
+
+  self.summary = "wikiscript-parser - wikitext/script parser (builds abstract syntax tree 'n' more)"
+  self.description = summary
+
+  self.urls = { home: 'https://github.com/wikiscript/wikiscript' }
+
+  self.author = 'Gerald Bauer'
+  self.email  = 'opensport@googlegroups.com'
+
+  # switch extension to .markdown for gihub formatting
+  self.readme_file  = 'README.md'
+  self.history_file = 'CHANGELOG.md'
+
+  self.extra_deps = [
+    ['wikitree' ],
+  ]
+
+  self.licenses = ['Public Domain']
+
+  self.spec_extras = {
+    required_ruby_version: '>= 2.2.2'
+  }
+end

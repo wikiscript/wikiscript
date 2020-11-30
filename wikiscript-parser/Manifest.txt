@@ -1,0 +1,8 @@
+CHANGELOG.md
+Manifest.txt
+README.md
+Rakefile
+lib/wikiscript-parser.rb
+lib/wikiscript-parser/parser.rb
+lib/wikiscript-parser/version.rb
+lib/wikiscript/parser.rb

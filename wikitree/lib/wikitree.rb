@@ -8,7 +8,8 @@ require 'wikitree/nodes'
 
 
 ## add camelcase alias
-WikiTree = Wikitree
+WikiTree   = Wikitree
+WikiScript = Wikiscript
 
 
 puts Wikiscript::Module::Tree.banner
