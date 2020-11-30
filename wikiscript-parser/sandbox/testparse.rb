@@ -331,13 +331,13 @@ end
 
 
 
-# name = 'Austria'
+name = 'Austria'
 # name = 'Belgium'
 # name = 'Mexico'
 # name = 'France'
 # name = 'United_States'
 # name = 'Argentina'
-name = 'United_Kingdom'
+# name = 'United_Kingdom'
 path = "../wikipedia/infoboxes/en/#{name}.txt"
 
 
