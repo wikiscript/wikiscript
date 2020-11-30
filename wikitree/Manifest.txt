@@ -1,0 +1,9 @@
+CHANGELOG.md
+Manifest.txt
+README.md
+Rakefile
+lib/wikitree.rb
+lib/wikitree/nodes.rb
+lib/wikitree/version.rb
+test/helper.rb
+test/test_nodes.rb

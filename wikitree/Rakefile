@@ -1,0 +1,27 @@
+require 'hoe'
+require './lib/wikitree/version.rb'
+
+Hoe.spec 'wikitree' do
+
+  self.version = Wikiscript::Module::Tree::VERSION
+
+  self.summary = "wikitree - wikitext/script abstract syntax tree (ast)"
+  self.description = summary
+
+  self.urls = { home: 'https://github.com/wikiscript/wikiscript' }
+
+  self.author = 'Gerald Bauer'
+  self.email  = 'opensport@googlegroups.com'
+
+  # switch extension to .markdown for gihub formatting
+  self.readme_file  = 'README.md'
+  self.history_file = 'CHANGELOG.md'
+
+  self.extra_deps = []
+
+  self.licenses = ['Public Domain']
+
+  self.spec_extras = {
+    required_ruby_version: '>= 2.2.2'
+  }
+end
