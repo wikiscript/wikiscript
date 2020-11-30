@@ -136,13 +136,33 @@ class Parser
     values
   end
 
+  def parse_weblink( input )
+    ## [https://ec.europa.eu/commfrontoffice/publicopinion/index.cfm/Survey/getSurveyDetail/instruments/SPECIAL/surveyKy/2251 Special Eurobarometer 493, European Union: European Commission, September 2019, pages 229-230]
+    input.scan( /\[/ )  ## eatup opening [
 
-  def parse_link( input )    ## todo/fix: change to parse_page - why? why not?
+    href = input.scan( /[^ \]]+/ ).strip ## note: breaks on SPACE or ]
+    skip_whitespaces( input )
+
+    alt_text = if input.check( /\]/ )
+                    nil
+               else  ## note: has move optional alternate/display text
+                   input.scan( /[^\]]+/ ).strip
+               end
+
+    input.scan( /\]/ )  ## eatup closing ]
+    skip_whitespaces( input )
+
+    Wikitree::Weblink.new( href, alt_text )
+  end
+
+
+  def parse_pagelink( input )    ## todo/fix: change to parse_page/parse_link - why? why not?
     input.scan( /\[\[/ )
 
     ## page name
     name     = input.scan( /[^|\]]+/ ).strip
-    alt_name = if input.check( /\|/ )  ## optional alternate/display name
+
+    alt_text = if input.check( /\|/ )  ## optional alternate/display text
                   input.scan( /\|/ )  ## eat up |
                   input.scan( /[^\]]+/ ).strip
                else
@@ -152,13 +172,13 @@ class Parser
     input.scan( /\]\]/ )  ## eatup ]]
     skip_whitespaces( input )
 
-    if alt_name
-      puts " @page<#{name} | #{alt_name}>"
+    if alt_text
+      puts " @page<#{name} | #{alt_text}>"
     else
       puts " @page<#{name}>"
     end
 
-    Wikitree::Page.new( name, alt_name )
+    Wikitree::Page.new( name, alt_text )
   end
 
 
@@ -167,7 +187,9 @@ class Parser
     if input.check( TEMPLATE_BEGIN_RE )
       parse_template( input )
     elsif input.check( /\[\[/ )
-      parse_link( input )
+      parse_pagelink( input )
+    elsif input.check( /\[/ )
+      parse_weblink( input )
     elsif input.check( /[^|{}\[\]]+/ )    ## check for rawtext run for now
       run = input.scan( /[^|{}\[\]]+/ ).strip
       # puts "   text run=>#{run}<"

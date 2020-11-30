@@ -1,9 +1,11 @@
 require 'pp'
+require 'json'
 
 
 # our own code
 require 'wikitree/version' # let it always go first
-require 'wikitree/nodes'
+require 'wikitree/nodes'      # core/basic nodes
+require 'wikitree/template'   # core/basic nodes
 
 
 
