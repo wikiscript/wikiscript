@@ -7,6 +7,6 @@ module Wikiscript
    end
 
    def self.root
-     "#{File.expand_path( File.dirname(File.dirname(File.dirname(__FILE__))) )}"
+     File.expand_path( File.dirname(File.dirname(File.dirname(__FILE__))) )
    end
 end
