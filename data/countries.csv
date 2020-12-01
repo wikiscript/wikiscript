@@ -1,0 +1,187 @@
+Name, Category, Region,  Comments
+
+###
+## Europe
+##  see https://en.wikipedia.org/wiki/List_of_sovereign_states_and_dependent_territories_in_Europe
+
+Albania,  Country, Europe
+Andorra,  Country, Europe
+Armenia,  Country, Europe
+Austria,  Country, Europe
+Azerbaijan,  Country, Europe
+Belarus,  Country, Europe
+Belgium,  Country, Europe
+Bosnia and Herzegovina,  Country, Europe
+Bulgaria,  Country, Europe
+Croatia,  Country, Europe
+Cyprus,  Country, Europe
+Czech Republic,  Country, Europe
+Denmark,  Country, Europe
+Estonia,  Country, Europe
+Finland,  Country, Europe
+France,  Country, Europe
+Georgia (country),  Country, Europe
+Germany,  Country, Europe
+Greece,  Country, Europe
+Hungary,  Country, Europe
+Iceland,  Country, Europe
+Republic of Ireland,  Country, Europe
+Italy,  Country, Europe
+Kazakhstan,  Country, Europe
+Latvia,  Country, Europe
+Liechtenstein,  Country, Europe
+Lithuania,  Country, Europe
+Luxembourg,  Country, Europe
+Malta,  Country, Europe
+Moldova,  Country, Europe
+Monaco,  Country, Europe
+Montenegro,  Country, Europe
+Netherlands,  Country, Europe
+North Macedonia,  Country, Europe
+Norway,  Country, Europe
+Poland,  Country, Europe
+Portugal,  Country, Europe
+Romania,  Country, Europe
+Russia,  Country, Europe
+San Marino,  Country, Europe
+Serbia,  Country, Europe
+Slovakia,  Country, Europe
+Slovenia,  Country, Europe
+Spain,  Country, Europe
+Sweden,  Country, Europe
+Switzerland,  Country, Europe
+Turkey,  Country, Europe
+Ukraine,  Country, Europe
+United Kingdom,  Country, Europe
+Vatican City,  Country, Europe
+
+## The following six entities in Europe have partial diplomatic recognition...
+
+Abkhazia,              Country (disputed), Europe
+Republic of Artsakh,   Country (disputed), Europe
+Kosovo,                Country (disputed), Europe
+Northern Cyprus,       Country (disputed), Europe
+South Ossetia,         Country (disputed), Europe
+Transnistria,          Country (disputed), Europe
+
+## The following six European entities are dependent territories
+
+Akrotiri and Dhekelia, Dependencies (Great Britain), Europe
+Faroe Islands,         Dependencies (Denmark), Europe
+Gibraltar,             Dependencies (Great Britain), Europe
+Bailiwick of Guernsey, Dependencies (Great Britain), Europe
+Isle of Man,           Dependencies (Great Britain), Europe
+Jersey,                Dependencies (Great Britain), Europe
+
+## The following places are considered integral parts of their controlling state,
+##  but have a political arrangement which was decided through an international agreement.
+
+Åland Islands,        Dependencies (Finland), Europe
+Northern Ireland,     Dependencies (Great Birtain), Europe
+Svalbard,             Dependencies (Norway), Europe
+
+
+###
+## North America (incl. Central America and Caribbean Islands)
+##  see https://en.wikipedia.org/wiki/List_of_sovereign_states_and_dependent_territories_in_North_America
+
+Canada,            Country, North America
+United States,     Country, North America
+Mexico,            Country, North America
+
+Greenland,            Dependencies (Denmark),  North America
+Saint Pierre and Miquelon,  Dependencies (France),  North America
+Clipperton Island,  Dependencies (France),  North America
+Bermuda,       Dependencies (Great Britain), North America
+
+
+Guatemala,         Country, Central America
+Costa Rica,         Country, Central America
+Belize,              Country, Central America
+El Salvador,         Country, Central America
+Honduras,           Country, Central America
+Nicaragua,          Country, Central America
+Panama,           Country, Central America
+
+
+Antigua and Barbuda, Country, Caribbean Islands
+The Bahamas,         Country, Caribbean Islands
+Barbados,            Country, Caribbean Islands
+Cuba,                Country, Caribbean Islands
+Dominica,            Country, Caribbean Islands
+Dominican Republic,  Country, Caribbean Islands
+Grenada,             Country, Caribbean Islands
+Haiti,               Country, Caribbean Islands
+Jamaica,             Country, Caribbean Islands
+Saint Kitts and Nevis,  Country, Caribbean Islands
+Saint Lucia,          Country, Caribbean Islands
+Saint Vincent and the Grenadines,  Country, Caribbean Islands
+Trinidad and Tobago,   Country, Caribbean Islands
+
+
+## Dependencies
+
+Anguilla,      Dependencies (Great Britain), Caribbean Islands
+British Virgin Islands,  Dependencies (Great Britain), Caribbean Islands
+Cayman Islands, Dependencies (Great Britain), Caribbean Islands
+Montserrat, Dependencies (Great Britain), Caribbean Islands
+Turks and Caicos Islands, Dependencies (Great Britain), Caribbean Islands
+
+Puerto Rico,  Dependencies (United States), Caribbean Islands
+United States Virgin Islands,  Dependencies (United States), Caribbean Islands
+
+## Navassa Island -- Claimed by Haiti, Uninhabited, administrated by the United States
+
+
+######
+## Integral parts of primarily non-North American states
+
+Aruba,    Dependencies (Netherlands),  Caribbean Islands
+Bonaire,    Dependencies (Netherlands),  Caribbean Islands
+Curaçao,    Dependencies (Netherlands),  Caribbean Islands
+
+Guadeloupe,  Dependencies (France),  Caribbean Islands
+Martinique,  Dependencies (France),  Caribbean Islands
+Saint Barthélemy,  Dependencies (France),  Caribbean Islands
+Collectivity of Saint Martin,   Dependencies (France),  Caribbean Islands
+
+Saba,           Dependencies (Netherlands),  Caribbean Islands
+Sint Eustatius,  Dependencies (Netherlands),  Caribbean Islands
+Sint Maarten,     Dependencies (Netherlands),  Caribbean Islands
+
+Federal Dependencies of Venezuela, Dependencies (Venezuela),  Caribbean Islands
+Nueva Esparta, Dependencies (Venezuela),  Caribbean Islands
+
+"Archipelago of San Andrés, Providencia and Santa Catalina", Dependencies (Colombia),  Caribbean Islands
+
+
+####################
+# South America
+#   see https://en.wikipedia.org/wiki/List_of_sovereign_states_and_dependent_territories_in_South_America
+
+Argentina,   Country, South America
+Bolivia,   Country, South America
+Brazil,   Country, South America
+Chile,   Country, South America
+Colombia,   Country, South America
+Ecuador,   Country, South America
+Guyana,   Country, South America
+Paraguay,   Country, South America
+Peru,   Country, South America
+Suriname,   Country, South America
+Uruguay,   Country, South America
+Venezuela,   Country, South America
+
+## Internal territory
+French Guiana,  Dependencies (France),  South America
+
+## External dependent territories
+Falkland Islands,  Dependencies (Great Britain), South America
+South Georgia and the South Sandwich Islands, Dependencies (Great Britain), South America
+
+Bouvet Island, Dependencies (Norway),  South America    ## Sometimes grouped with Antarctica rather than South America
+
+
+### todo - add Asia, Africa, Oceania, etc.
+###  note: Antartica on Wikipedia is a continent (not a "country" or such)
+
