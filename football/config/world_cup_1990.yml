@@ -1,0 +1,30 @@
+
+page: 1990_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- aut    # Austria      -- Group A
+- tch    # Czechoslovakia
+- ita    # Italy
+- usa    # United States
+- arg    # Argentina    -- Group B
+- arg_ii # Argentina Replacements
+- cmr    # Cameroon
+- rou    # Romania
+- urs    # Soviet Union
+- bra    # Brazil       -- Group C
+- crc    # Costa Rica
+- sco    # Scotland
+- swe    # Sweden
+- col    # Colombia     -- Group D
+- uae    # United Arab Emirates
+- frg    # West Germany
+- yug    # Yugoslavia
+- bel    # Belgium      -- Group E
+- kor    # South Korea
+- esp    # Spain
+- uru    # Uruguay
+- egy    # Egypt        -- Group F
+- eng    # England
+- irl    # Ireland
+- ned    # Netherlands

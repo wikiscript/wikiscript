@@ -1,0 +1,20 @@
+
+page: 1938_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- ita  # Italy
+- hun  # Hungary
+- bra  # Brazil
+- swe  # Sweden
+- tch  # Czechoslovakia
+- sui  # Switzerland
+- cub  # Cuba
+- fra  # France
+- rou  # Romania
+- ger  # Deutschland
+- pol  # Poland
+- nor  # Norway
+- bel  # Belgium
+- ned  # Netherlands
+- dei  # Dutch East Indies (Indonesia)

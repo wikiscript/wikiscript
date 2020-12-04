@@ -1,0 +1,22 @@
+
+page: 1954_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- bra  # Brazil   -- Group 1
+- yug  # Yugoslavia
+- fra  # France
+- mex  # Mexico
+- hun  # Hungary  -- Group 2
+- frg  # West Germany
+- tur  # Turkey
+- kor  # South Korea
+- uru  # Uruguay    --  Group 3
+- aut  # Austria
+- tch  # Czechoslovakia
+- sco  # Scotland
+- eng  # England    -- Group 4
+- sui  # Switzerland
+- ita  # Italy
+- bel  # Belgium
+

@@ -1,0 +1,37 @@
+
+page: 2010_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- rsa # Südafrika   -- Group A
+- mex # Mexiko 
+- uru # Uruguay
+- fra # Frankreich
+- arg # Argentinien   -- Group B
+- nga # Nigeria
+- kor # Südkorea
+- gre # Griechenland
+- eng # England       -- Group C
+- usa # Vereinigte Staaten
+- alg # Algerien
+- svn # Slowenien
+- ger # Deutschland   -- Group D
+- aus # Australien
+- srb # Serbien
+- gha # Ghana
+- ned # Niederlande  -- Group E
+- den # Dänemark
+- jpn # Japan
+- cmr # Kamerun
+- ita # Italien  -- Group F
+- par # Paraguay
+- nzl # Neuseeland
+- svk # Slowakei
+- bra # Brasilien  -- Group G
+- prk # Nordkorea
+- civ # Elfenbeinküste
+- por # Portugal
+- esp # Spanien   -- Group H
+- sui # Schweiz
+- hon # Honduras
+- chi # Chile

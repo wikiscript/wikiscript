@@ -1,0 +1,22 @@
+
+page: 1974_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- frg # West Germany   -- Group 1
+- gdr # East Germany
+- aus # Australia
+- chi # Chile
+- bra # Brazil         -- Group 2
+- sco # Scotland
+- yug # Yugoslavia
+- zai # Zaire
+- ned # Netherlands    -- Group 3
+- swe # Sweden
+- uru # Uruguay
+- bul # Bulgaria
+- pol # Poland         -- Group 4
+- ita # Italy
+- arg # Argentina
+- hai # Haiti
+

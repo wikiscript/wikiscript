@@ -1,0 +1,21 @@
+
+page: 1970_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- mex  # Mexico   -- Group 1
+- urs  # Soviet Union
+- bel  # Belgium
+- slv  # El Salvador
+- ita  # Italy    -- Group 2
+- swe  # Sweden
+- uru  # Uruguay
+- isr  # Israel
+- bra  # Brazil   -- Group 3
+- eng  # England
+- tch  # Czechoslovakia
+- rou  # Romania
+- frg  # West Germany  -- Group 4
+- per  # Peru
+- bul  # Bulgaria
+- mar  # Morocco

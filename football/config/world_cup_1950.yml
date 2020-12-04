@@ -1,0 +1,19 @@
+
+page: 1950_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- bra  # Brazil   -- Group 1
+- sui  # Switzerland
+- yug  # Yugoslavia
+- mex  # Mexico
+- esp  # Spain      -- Group 2
+- eng  # England
+- chi  # Chile
+- usa  # United States
+- swe  # Sweden     -- Group 3
+- ita  # Italy
+- par  # Paraguay
+- uru  # Uruguay    --  Group 4
+- bol  # Bolivia
+

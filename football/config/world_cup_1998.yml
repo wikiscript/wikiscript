@@ -1,0 +1,39 @@
+
+page: 1998_FIFA_World_Cup_squads
+
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- bra # Brazil    -- Group A
+- mar # Morocco
+- nor # Norway
+- sco # Scotland
+- aut # Austria   -- Group B
+- cmr # Cameroon
+- chi # Chile
+- ita # Italy
+- den # Denmark   -- Group C
+- fra # France
+- ksa # Saudi Arabia
+- rsa # South Africa
+- bul # Bulgaria  -- Group D
+- nga # Nigeria
+- par # Paraguay
+- esp # Spain
+- bel # Belgium   -- Group E
+- mex # Mexico
+- ned # Netherlands
+- kor # South Korea
+- ger # Germany   -- Group F
+- irn # Iran
+- usa # USA
+- yug # Yugoslavia
+- col # Colombia   -- Group G
+- eng # England
+- rou # Romania
+- tun # Tunisia
+- arg # Argentina   -- Group H
+- cro # Croatia
+- jam # Jamaica
+- jpn # Japan
+

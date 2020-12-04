@@ -1,0 +1,39 @@
+
+page: 2006_FIFA_World_Cup_squads
+
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- crc # Costa Rica    -- Group A
+- ecu # Ecuador
+- ger # Deutschland
+- pol # Poland
+- eng # England       -- Group B
+- par # Paraguay
+- swe # Sweden
+- tri # Trinidad and Tobago
+- arg # Argentinien    -- Group C
+- civ # Elfenbeinküste
+- ned # Niederlande
+- srb # Serbia and Montenegro
+- ang # Angola       -- Group D
+- irn # Iran
+- mex # Mexiko
+- por # Portugal
+- cze # Czech Republic   -- Group E
+- gha # Ghana
+- ita # Italien
+- usa # Vereinigte Staaten
+- aus # Australien    -- Group F
+- bra # Brasilien
+- cro # Croatia
+- jpn # Japan
+- fra # France   -- Group G
+- kor # Südkorea
+- sui # Switzerland
+- tog # Togo
+- ksa # Saudi Arabia   -- Group H
+- esp # Spanien
+- tun # Tunisia
+- ukr # Ukraine
+- ukr_ii # Ukraine Replacements

@@ -1,0 +1,30 @@
+
+page: 1986_FIFA_World_Cup_squads
+
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- arg  # Argentina    -- Group 1
+- bul  # Bulgaria
+- ita  # Italy
+- kor  # South Korea
+- bel  # Belgium      -- Group 2
+- irq  # Iraq
+- mex  # Mexico
+- par  # Paraguay
+- can  # Canada       -- Group 3
+- fra  # France
+- hun  # Hungary
+- urs  # Soviet Union
+- alg  # Algeria      -- Group 4
+- bra  # Brazil
+- nir  # Northern Ireland
+- esp  # Spain
+- den  # Denmark      -- Group 5
+- sco  # Scotland
+- uru  # Uruguay
+- frg  # West Germany
+- mar  # Morocco      -- Group 6
+- eng  # England
+- pol  # Poland
+- por  # Portugal

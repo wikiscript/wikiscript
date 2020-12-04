@@ -1,0 +1,23 @@
+
+page: 1934_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- ita  # italy
+- tch  # czechoslovakia
+- ger  # deutschland
+- aut  # austria
+- esp  # espana
+- hun  # hungary
+- sui  # switzerland
+- swe     # sweden
+- swe_ii  # sweden ii  -- Reserves in stand by
+- fra  # france
+- ned  # netherlands
+- arg  # argentina
+- rou  # romania
+- egy  # egypt
+- bra  # brazil
+- bel  # belgium
+- usa  # united-states
+

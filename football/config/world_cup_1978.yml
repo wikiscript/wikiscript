@@ -1,0 +1,22 @@
+
+page: 1978_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- arg  # Argentina    -- Group 1
+- fra  # France
+- hun  # Hungary
+- ita  # Italy
+- mex  # Mexico       -- Group 2
+- pol  # Poland
+- tun  # Tunisia
+- frg  # West Germany
+- aut  # Austria      -- Group 3
+- bra  # Brazil
+- esp  # Spain
+- swe  # Sweden
+- irn  # Iran         -- Group 4
+- ned  # Netherlands
+- per  # Peru
+- sco  # Scotland
+

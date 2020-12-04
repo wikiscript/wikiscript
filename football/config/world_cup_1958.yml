@@ -1,0 +1,21 @@
+
+page: 1958_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- frg  # West Germany       -- Group 1
+- nir  # Northern Ireland
+- tch  # Czechoslovakia
+- arg  # Argentina
+- fra  # France           -- Group 2
+- yug  # Yugoslavia
+- par  # Paraguay
+- sco  # Scotland
+- swe  # Sweden           -- Group 3
+- wal  # Wales
+- hun  # Hungary
+- mex  # Mexico
+- bra  # Brazil           -- Group 4
+- urs  # Soviet Union
+- eng  # England
+- aut  # Austria

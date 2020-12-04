@@ -1,0 +1,39 @@
+
+page: 2002_FIFA_World_Cup_squads
+
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- den # Denmark    -- Group A
+- fra # France
+- sen # Senegal
+- uru # Uruguay
+- par # Paraguay   -- Group B
+- svn # Slovenia
+- rsa # South Africa
+- esp # Spain
+- bra # Brazil     -- Group C
+- chn # China
+- crc # Costa Rica
+- tur # Turkey
+- pol # Poland     -- Group D
+- por # Portugal
+- kor # South Korea
+- usa # United States
+- cmr # Cameroon   -- Group E
+- ger # Germany
+- irl # Ireland
+- ksa # Saudi Arabia
+- arg # Argentina   -- Group F
+- eng # England
+- nga # Nigeria
+- swe # Sweden
+- cro # Croatia     -- Group G
+- ecu # Ecuador
+- ita # Italy
+- mex # Mexico
+- bel # Belgium     -- Group H
+- jpn # Japan
+- rus # Russia
+- tun # Tunisia
+

@@ -1,0 +1,21 @@
+
+page: 1966_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- eng  # England   -- Group 1
+- fra  # France
+- mex  # Mexico
+- uru  # Uruguay
+- arg  # Argentina  -- Group 2
+- esp  # Spain
+- sui  # Switzerland
+- frg  # West Germany
+- bra  # Brazil     -- Group 3
+- bul  # Bulgaria
+- hun  # Hungary
+- por  # Portugal
+- chi  # Chile      -- Group 4
+- ita  # Italy
+- prk  # North Korea
+- urs  # Soviet Union

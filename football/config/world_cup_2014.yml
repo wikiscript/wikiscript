@@ -1,0 +1,37 @@
+
+page: 2014_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- bra  # brazil    -- Group A
+- cmr  # cameroon
+- cro  # croatia
+- mex  # mexico
+- aus  # australia   -- Group B
+- chi  # chile
+- ned  # netherlands
+- esp  # espana
+- col  # colombia     -- Group C
+- gre  # greece
+- civ  # cote-d-ivoire
+- jpn  # jp-japan
+- crc  # cr-costa-rica    -- Group D
+- eng  # en-england
+- ita  # it-italy
+- uru  # uy-uruguay
+- ecu  # ec-ecuador     -- Group E
+- fra  # fr-france
+- hon  # hn-honduras
+- sui  # ch-switzerland
+- arg  # ar-argentina    -- Group F
+- bih  # ba-bosnia-herzegovina
+- irn  # ir-iran
+- nga  # ng-nigeria
+- ger  # de-deutschland   -- Group G
+- gha  # gh-ghana
+- por  # pt-portugal
+- usa  # us-united-states
+- alg  # dz-algeria       -- Group H
+- bel  # be-belgium
+- rus  # ru-russia
+- kor  # kr-south-korea

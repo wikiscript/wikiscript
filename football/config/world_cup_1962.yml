@@ -1,0 +1,22 @@
+
+page: 1962_FIFA_World_Cup_squads
+
+# mappings filenames for teams (note: MUST match order in source page)
+teams:
+- urs  # Soviet Union  -- Group 1
+- yug  # Yugoslavia
+- uru  # Uruguay
+- col  # Colombia
+- frg  # West Germany  -- Group 2
+- chi  # Chile
+- ita  # Italy
+- sui  # Switzerland
+- bra  # Brazil        -- Group 3
+- tch  # Czechoslovakia
+- mex  # Mexico
+- esp  # Spain
+- hun  # Hungary       -- Group 4
+- eng  # England
+- arg  # Argentina
+- bul  # Bulgaria
+
