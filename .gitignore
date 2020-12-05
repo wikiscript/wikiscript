@@ -1,0 +1,8 @@
+#####
+# ignore tmp directories
+
+tmp
+tmp/
+temp
+temp/
+
