@@ -8,18 +8,16 @@ require 'wikitree'
 # our own code
 require 'wikiscript-parser/version' # let it always go first
 require 'wikiscript-parser/parser'
-
+require 'wikiscript-parser/infobox'
 
 
 
 ####
 # convenience all-in-one parse helper - add - why? why not?
 module Wikiscript
-  def self.parse( text )
-     Parser.new( text ).parse
-  end
+  def self.parse( text )        Parser.new( text ).parse; end
+  def self.find_infobox( text ) Parser.new( text ).find_infobox; end
 end
-
 
 
 puts Wikiscript::Module::Parser.banner

@@ -21,35 +21,43 @@ puts "  #{rows.size} row(s)"
 puts
 
 
-base_url='https://en.wikipedia.org/w/index.php?title={title}&action=raw'
+
+def save_page( title )
+  base_url='https://en.wikipedia.org/w/index.php?title={title}&action=raw'
+
+  ## todo/check: use %20 for encoding space (or +) - why? why not?
+  ## https://en.wikipedia.org/w/index.php?title=South%20Georgia%20and%20the%20South%20Sandwich%20Islands&action=raw
+  ## https://en.wikipedia.org/w/index.php?title=South+Georgia+and+the+South+Sandwich+Islands&action=raw
+
+  ##
+  ## URI.encode_www_form_component(string, enc=nil)
+  ## This method will percent-encode every reserved character,
+  ## leaving only *, -, ., 0-9, A-Z, _, a-z intact.
+  ## Note: It also substitues space with +.
+  title_encoded = URI.encode_www_form_component( title )
+  url  = base_url.gsub( '{title}', title_encoded )
+
+  path = "#{title.gsub( ' ', '_' )}.txt"
+  puts "   >#{title}<, >#{title_encoded}<  path=>#{path}<, try url=>#{url}<"
+
+  ## note: change path (used for disk cache)!!
+  response = Webget.text( url, path: path )
+  ## note: exit on get / fetch error - do NOT continue for now - why? why not?
+  exit 1   if response.status.nok?    ## e.g.  HTTP status code != 200
+end
+
+
+
 ### fetch first two pages
 ## rows = rows[0..2]
 ## pp rows
 
-
-##
-## todo/check: use urlencode - which method - from cgi?
-##
-## https://en.wikipedia.org/w/index.php?title=South%20Georgia%20and%20the%20South%20Sandwich%20Islands&action=raw
-
-##rows = rows[0..3]
+## rows = rows[0..3]
 
 rows.each do |row|
   title = row['Name']
-  url  = base_url.gsub( '{title}', title )
-  path = "#{title.gsub( ' ', '_' )}.txt"
-  puts "   >#{title}<   path=>#{path}<, try url=>#{url}<"
 
-  ## test create text file in tmp
-  ##   check if () and , can be used in filename too e.g.
-  ##    Archipelago of San Andrés, Providencia and Santa Catalina
-  ##     => Archipelago_of_San_Andrés,_Providencia_and_Santa_Catalina.txt
-  File.open( "./countries/tmp/#{path}", 'w:utf-8') {|f| f.write( 'test' ) }
-
-  ## note: change path (used for disk cache)!!
-  ## todo/fix:  check return code!!!
-  ##   abort/fail if NOT 200!!!
-  Webget.text( url, path: path )
+  save_page( title )
 end
 
 puts "  #{rows.size} row(s)"
@@ -58,18 +66,3 @@ puts
 
 puts "bye"
 
-__END__
-
-todo/fix:
-
->Åland Islands<   path=>Åland_Islands.txt<, try url=>https://en.wikipedia.org/w/index.php?title=Åland Islands&action=raw<
-sleep 3 sec(s)...
-Traceback (most recent call last):
-      7: from countries/pages.rb:37:in `<main>'
-      6: from countries/pages.rb:37:in `each'
-      5: from countries/pages.rb:50:in `block in <main>'
-      4: from lib/ruby/gems/2.7.0/gems/webget-0.2.4/lib/webget/webget.rb:69:in `text'
-      3: from lib/ruby/gems/2.7.0/gems/webclient-0.2.0/lib/webclient/webclient.rb:73:in `get'
-      2: from lib/ruby/2.7.0/uri/common.rb:234:in `parse'
-      1: from lib/ruby/2.7.0/uri/rfc3986_parser.rb:73:in `parse'
-lib/ruby/2.7.0/uri/rfc3986_parser.rb:21:in `split': URI must be ascii only "https://en.wikipedia.org/w/index.php?title=\\u00C5land Islands&action=raw" (URI::InvalidURIError)
