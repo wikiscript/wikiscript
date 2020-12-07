@@ -30,6 +30,10 @@ root = "#{Webcache.root}/en.wikipedia.org"
 #  {'Name' => 'Bulgaria'},
 # { 'Name' => 'Hungary' },
 # { 'Name' => 'Republic of Ireland' },
+#  { 'Name' => 'Serbia' },
+#  { 'Name' => 'United Kingdom' },
+#  { 'Name' => 'Canada' },
+#   { 'Name' => 'Bonaire' },
 #]
 
 

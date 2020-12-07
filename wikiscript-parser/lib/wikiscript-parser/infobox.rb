@@ -17,12 +17,7 @@ class Parser
     ## parse templates only e.g {{}}
     ##  until we find Infobox country or dependency!!!!
 
-    ## note: remove all html comments for now - why? why not?
-    ## <!-- Area rank should match .. -->
-    text = @text.gsub( /<!--.+?-->/m ) do |m|  ## note: use .+? (non-greedy match)
-        ## puts " removing comment >#{m}<"
-        ''
-    end
+    text = sanitize( @text )   ## remove html comments, noinclude blocks, etc.
 
     input = StringScanner.new( text )
 

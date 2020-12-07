@@ -40,12 +40,20 @@ class Parser
   ## todo/fix: check how to add # too!!!
   ##  todo: check what chars to escape in character class
   ##  change to something line [^|<>\[\]{}]+ ]
-  TEMPLATE_NAME_RE = %r{[a-z0-9!/\\:# _-]+}i
+  TEMPLATE_NAME_RE = %r{[a-z0-9!/\\()*:#," _-]+}i
+
 
   ## note: is an allowed template too!!
+  ##  - {{Canadian monarch, current|nameonly=~}}
   ##  - {{!}}                            - see in Bulgaria infobox
   ##  - {{\}}                            - see in Republic of Ireland infobox
+  ##  - {{-"}}                           - see in Bonaire infobox
+  ##
   ##  - {{#expr:9769526/93030 round 0}}  - see in Hungary infobox
+  ##  - {{#expr:(37583962/63182178)*100 round 1}} - see in United Kingdom infobox
+  ##
+  ##  for #expr, see https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions
+
 
   def parse_template( input )
     input.scan( TEMPLATE_BEGIN_RE ) ## e.g.{{
@@ -205,13 +213,41 @@ class Parser
   end
 
 
-  def parse_lines( text )
+  ####
+  ## e.g.
+  ##   <!--increase/decrease/steady-->
+  COMMENT_RE = %r{<!--
+                   .+?     ## note: use .+? (non-greedy match)
+                   -->}xm
+
+  ######
+  ## e.g.
+  ##   <noinclude>{{pp-vandalism|small=yes}}</noinclude>
+  NOINCLUDE_RE = %r{<noinclude>
+                     .+?     ## note: use .+? (non-greedy match)
+                    </noinclude>}xmi
+
+  def sanitize( text )  ## todo/check: rename to cleanup or such - why? why not?
     ## note: remove all html comments for now - why? why not?
     ## <!-- Area rank should match .. -->
-    text = text.gsub( /<!--.+?-->/m ) do |m|  ## note: use .+? (non-greedy match)
-                                         puts " removing comment >#{m}<"
-                                         ''
-                                       end
+    text = text.gsub( COMMENT_RE ) do |m|
+      # puts " removing comment >#{m}<"
+      ''
+    end
+
+    ## <noinclude>..</noinclude>
+    text = text.gsub( NOINCLUDE_RE ) do |m|
+      puts "  removing noinclude block >#{m}<"
+      ''
+    end
+
+    text
+  end
+
+
+
+  def parse_lines( text )
+    text = sanitize( text )  ## remove html comments, noinclude blocks, etc.
 
     input = StringScanner.new( text )
 
