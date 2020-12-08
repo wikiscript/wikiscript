@@ -5,9 +5,9 @@ require 'json'
 # our own code
 require 'wikitree/version' # let it always go first
 require 'wikitree/nodes'      # core/basic nodes
-require 'wikitree/template'   # core/basic nodes
-require 'wikitree/file'       # core/basic nodes
-
+require 'wikitree/template'
+require 'wikitree/file'
+require 'wikitree/ref'
 
 
 ## add camelcase alias

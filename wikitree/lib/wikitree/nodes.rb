@@ -88,34 +88,5 @@ class Weblink < Node     ## web link - use a different name just link - why? why
 end
 
 
-
-class Ref < Node     ## Ref (Citation footnote)
-  def initialize( nodes=[] )
-    @nodes = nodes
-  end
-
-  def to_text
-    ## todo/fix:  return [1], [2] or [a], [b] or such
-    "[*]"
-  end
-  def to_wiki
-    text = @nodes.map{|node| node.to_wiki}.join( ' ' )
-    "<ref>#{text}</ref>"
-  end
-
-  def inspect
-    "#<ref #{@nodes.inspect}>"
-  end
-
-  def pretty_print(pp)
-    pp.text "#<ref: "
-    pp.breakable
-    pp.pp @nodes
-    pp.text ">"
-  end
-end
-
-
-
 end # module Wikitext
 

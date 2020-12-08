@@ -10,7 +10,8 @@ class TestRef < MiniTest::Test
 
   def test_ref
     nodes = Wikiscript::Parser.new( <<TXT ).parse
-<ref group="N" name="denonly group=N" />
+<ref group=lower-alpha name="region"/>
+<ref group="N" name="UNHDR" />
 <ref name="UNHDR">
   [1] [2] [3]
   [http://example.com]

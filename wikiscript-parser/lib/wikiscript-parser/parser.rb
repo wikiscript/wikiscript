@@ -11,10 +11,21 @@ class Parser
 
   def initialize( text )
     @text = text
+
+    ## keep track and auto-number references
+    ##  note: references can get grouped
+    @refs = {}
   end
 
+
   def parse
-    parse_lines( @text )
+    nodes = parse_lines( @text )
+
+    puts "references:"
+    pp @refs
+    puts
+
+    nodes
   end
 
 
@@ -312,16 +323,27 @@ class Parser
 
   def parse_ref( input )
     puts "--> parse_ref:"
-    puts input.peek( 100 )
+    puts input.peek( 42 )
 
-    ## todo/fix: parse ref attributes too!!! name, group, ???
     if input.check( %r{<ref[^>]*/>}i )  ## e.g. <ref group="N" name="denonly group=N" />
-      input.scan(  %r{<ref[^>]*/>}i )
+      ## todo/check:  caputure groups and $1 working with input.scan??
+      input.scan(  %r{<ref}i )
+      attribs = parse_attribs( input.scan( %r{[^>]*(?=/>)}i )) ## note: POSITIVE lookahead required!!
+      input.scan(  %r{/>} )
+
       skip_whitespaces( input )   ## todo/fix: remove skip_whitespace here? really needed?
-      return Wikitree::Ref.new
+      return Wikitree::Refname.new( attribs['name'], attribs['group'] )
     elsif input.check( %r{<ref[^>]*>}i )  ## e.g. <ref name="UNHDR">
-      input.scan( %r{<ref[^>]*>}i )
-      puts "==> (begin) ref"
+      input.scan( %r{<ref}i )
+      attribs = parse_attribs( input.scan( %r{[^>]*}i ))
+      input.scan( %{>} )
+
+      puts "==> (begin) ref #{attribs.inspect}"
+
+      group = attribs['group'] || 'auto'  ## use another name for default group?
+      group_refs = @refs[ group ] ||= {}
+      name  = attribs['name'] || "_#{group_refs.size+1}"  ## use a counter if no name provided
+      ## todo/fix: check for/warn if duplicates!!!!
 
       skip_whitespaces( input )
       nodes = []
@@ -333,7 +355,13 @@ class Parser
            puts "<== (end) ref"
            # puts "  nodes:"
            # pp nodes
-           return Wikitree::Ref.new( nodes )
+
+           ## todo/check: rename count to index, seq(uence) or .. - why? why not?
+           ref = Wikitree::Ref.new( nodes, name: attribs['name'],
+                                           group: attribs['group'],
+                                           count: group_refs.size+1 )
+           group_refs[ name ] = ref
+           return ref
          else
            # puts " add node to ref:"
            nodes << parse_node( input )
@@ -423,6 +451,43 @@ class Parser
    end
    nodes
   end
+
+
+
+
+#####
+## helpers
+##   - parse html attributes into hash
+##     - allow with or without quotes
+def parse_attribs( text )
+  puts "  parse_attribs: >#{text}< : #{text.class.name}"
+  input = StringScanner.new( text )
+  attribs = {}
+  loop do
+    skip_whitespaces( input )
+    break if input.eos?
+
+    name = input.scan( /[a-z_]+/i ).downcase  ## note: always downcase for now
+    skip_whitespaces( input )
+    input.scan( /=/ )  ## eat-up separator (=)
+    skip_whitespaces( input )
+    value = nil
+    if input.check( /"/ )   ## assume quoted attrib
+      input.scan( /"/ ) ## eat-up quote (")
+      value = input.scan( /[^"]+/)
+      input.scan( /"/ ) ## eat-up quote (")
+    else
+      ## note: values allow dash (-) too e.g. allow group=lower-alpha  and such
+      value = input.scan( /[a-z0-9_-]+/i )
+    end
+
+    attribs[ name ] = value
+  end
+
+  pp attribs
+  attribs
+end
+
 
 end # class Parser
 end # module Wikiscript

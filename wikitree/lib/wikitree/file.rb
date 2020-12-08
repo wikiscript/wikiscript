@@ -76,7 +76,7 @@ class File < Node
   def to_text
     ## todo/fix: add all args too!!!
     ##  use "french" single guillemets to avoid html angle brackets for now - why? why not?
-    "‹file: #{@name}›"
+    "‹File: #{@name}›"
   end
 
   def to_wiki
