@@ -26,6 +26,18 @@ class Parser
     input.scan( /[ \t\r\n]*/ )
   end
 
+  def skip_comments( input )
+    return 0   if input.eos?
+
+    while input.scan( /<!--/ ) do
+      comment = input.scan_until( /.+?(?=-->)/ ) ## note: use possitive lookahead
+      puts "  skip comment >#{comment.strip}<"
+      input.scan( /-->/ )
+      skip_whitespaces( input )
+    end
+  end
+
+
   #
   # Whereas MediaWiki variable names are all uppercase,
   # template names have the same basic features and limitations as all page names:
@@ -66,6 +78,8 @@ class Parser
 
     params = []
     loop do
+       skip_comments( input )  if input.check( /<!--/ )  ## note: eat-up inline comments for now
+
        if input.check( TEMPLATE_END_RE ) ## e.g. }}
          input.scan( TEMPLATE_END_RE )
          puts "<== (end) template >#{name}<"
@@ -89,6 +103,7 @@ class Parser
   def parse_param( input )
     input.scan( /\|/ )
     skip_whitespaces( input )
+    skip_comments( input )  if input.check( /<!--/ )
 
     name  = nil
     value = []    # note: value is an array of ast nodes!!!
@@ -101,6 +116,7 @@ class Parser
       puts "        param name >#{name}<"
       input.scan( /=/ )
       skip_whitespaces( input )
+      skip_comments( input )  if input.check( /<!--/ )
 
       if input.check( /\|/ ) ||
          input.check( /\}/ )  ## add/allow }} too? - why? why not?
@@ -131,6 +147,8 @@ class Parser
     loop do
       values << parse_node( input )
       skip_whitespaces( input )
+      skip_comments( input )  if input.check( /<!--/ )
+
 
       ## puts "      [debug] peek >#{input.peek(10)}...<"
       if input.check( /\|/ ) || input.check( /\}\}/ )
@@ -193,24 +211,109 @@ class Parser
   end
 
 
+
+
+
+
+  def parse_text( input )
+    run = String.new('')
+
+    loop do
+      skip_comments( input )  if input.check( /<!--/ )
+
+      if input.check( /[^|{}\[\]<>]+/ )    ## check for rawtext run for now
+         run << input.scan( /[^|{}\[\]<>]+/ )
+         # puts "   text run=>#{run}<"
+      elsif input.check( /[|]/)    ||
+            input.check( /\[\[/ )  ||  # note: must be doubled up
+            input.check( /\]\]/ )  ||
+            input.check( /\{\{/ )  ||
+            input.check( /\}\}/ )  ||
+            input.check( /\[(?=https?:)/ ) ||  ## note: use POSITIVE lookahead
+            input.check( %r{<ref[^>]*/>}i ) ||  ## e.g. <ref group="N" name="denonly group=N" />
+            input.check( %r{<ref[^>]*>}i ) ||   ## e.g. <ref name="UNHDR">
+            input.check( %r{</ref>}i ) ||
+            input.eos?
+         break
+      elsif input.check( /\[(?!https?:)/ )  ## note: use NEGATIVE lookahead
+        run << input.scan( /\[/ )  ## eat "plain /verbatim" opening bracket
+                                   ## e.g. allows [1], [a], etc. or such
+      elsif input.check( /\]/ )
+        run << input.scan( /\]/ )  ## eat "plain /verbatim" closing bracket
+      elsif input.check( /\{/ )
+        run << input.scan( /\{/ )  ## e.g. allows {1} or such
+      elsif input.check( /\}/ )
+        run << input.scan( /\}/ )
+      elsif input.check( /</ )   ## note: eat-up html tags too (unless specified otherwise!!!)
+        run << input.scan( /</ )
+      elsif input.check( />/ )
+        run << input.scan( />/ )
+      else
+        puts " !! SYNTAX ERROR: unknown content type (in text run >#{run}<):"
+        puts input.peek( 100 )
+        exit 1
+      end
+    end
+
+    Wikitree::Text.new( run.strip )
+ end
+
+
+
+  def parse_ref( input )
+    puts "--> parse_ref:"
+    puts input.peek( 100 )
+
+    ## todo/fix: parse ref attributes too!!! name, group, ???
+    if input.check( %r{<ref[^>]*/>}i )  ## e.g. <ref group="N" name="denonly group=N" />
+      input.scan(  %r{<ref[^>]*/>}i )
+      skip_whitespaces( input )   ## todo/fix: remove skip_whitespace here? really needed?
+      return Wikitree::Ref.new
+    elsif input.check( %r{<ref[^>]*>}i )  ## e.g. <ref name="UNHDR">
+      input.scan( %r{<ref[^>]*>}i )
+      puts "==> (begin) ref"
+
+      skip_whitespaces( input )
+      nodes = []
+      loop do
+         skip_comments( input )  if input.check( /<!--/ )  ## note: eat-up inline comments for now
+
+         if input.check( %r{</ref>}i )
+           input.scan( %r{</ref>}i )
+           puts "<== (end) ref"
+           # puts "  nodes:"
+           # pp nodes
+           return Wikitree::Ref.new( nodes )
+         else
+           # puts " add node to ref:"
+           nodes << parse_node( input )
+         end
+       end
+    else
+      puts " !! SYNTAX ERROR: unknown ref syntax:"
+      puts input.peek( 100 )
+      exit 1
+    end
+  end
+
+
   def parse_node( input )
     ## puts "  [debug] parse >#{input.peek(10)}...<"
     if input.check( TEMPLATE_BEGIN_RE )
       parse_template( input )
     elsif input.check( /\[\[/ )
       parse_pagelink( input )
-    elsif input.check( /\[/ )
+    ## note:  [http:// or https:// ...] - other [] cases get handled like text!!!
+    elsif input.check( /\[(?=https?:)/ )  ## fix: add positive lookahead for http(s)://
       parse_weblink( input )
-    elsif input.check( /[^|{}\[\]]+/ )    ## check for rawtext run for now
-      run = input.scan( /[^|{}\[\]]+/ ).strip
-      # puts "   text run=>#{run}<"
-      Wikitree::Text.new( run )
+    elsif input.check( %r{<ref[^>]*/>}i ) ||  ## e.g. <ref group="N" name="denonly group=N" />
+          input.check( %r{<ref[^>]*>}i )      ## e.g. <ref name="UNHDR">
+      parse_ref( input )
     else
-      puts " !! SYNTAX ERROR: unknown content type:"
-      puts input.peek( 100 )
-      exit 1
+      parse_text( input )
     end
   end
+
 
 
   ####
@@ -230,10 +333,11 @@ class Parser
   def sanitize( text )  ## todo/check: rename to cleanup or such - why? why not?
     ## note: remove all html comments for now - why? why not?
     ## <!-- Area rank should match .. -->
-    text = text.gsub( COMMENT_RE ) do |m|
-      # puts " removing comment >#{m}<"
-      ''
-    end
+
+    # text = text.gsub( COMMENT_RE ) do |m|
+    #  # puts " removing comment >#{m}<"
+    #  ''
+    # end
 
     ## <noinclude>..</noinclude>
     text = text.gsub( NOINCLUDE_RE ) do |m|
@@ -254,13 +358,15 @@ class Parser
     nodes = []
     loop do
       skip_whitespaces( input )
+      ## note: skip comments for now (that is, do NOT create a ast node for it
+      #            BUT do NOT delete text from input string - lets you use pos_begin, pos_end etc.)
+      skip_comments( input )  if input.check( /<!--/ )
       break if input.eos?
 
       nodes << parse_node( input )
    end
    nodes
   end
-
 
 end # class Parser
 end # module Wikiscript

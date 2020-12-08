@@ -26,6 +26,7 @@ class Parser
     i = 0
     loop do
       skip_whitespaces( input )
+      skip_comments( input )  if input.check( /<!--/ )
       break if input.eos?
 
       ## check for expected {{ template begin!!!!
