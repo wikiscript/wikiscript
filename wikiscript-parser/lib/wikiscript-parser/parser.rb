@@ -88,7 +88,8 @@ class Parser
          return Wikitree::Template.new( name, params )
        elsif input.check( /\|/ )  ## e.g. |
          puts "      param #{params.size+1} (#{name}):"
-         param_name, param_value = parse_param( input )
+         param_name, param_value = parse_param( input,
+                                                end_re: TEMPLATE_END_RE )
          params << [param_name, param_value]
        else
          puts "!! SYNTAX ERROR: expected closing }} or para | in template:"
@@ -100,7 +101,7 @@ class Parser
 
 
 
-  def parse_param( input )
+  def parse_param( input, end_re: )
     input.scan( /\|/ )
     skip_whitespaces( input )
     skip_comments( input )  if input.check( /<!--/ )
@@ -119,20 +120,20 @@ class Parser
       skip_comments( input )  if input.check( /<!--/ )
 
       if input.check( /\|/ ) ||
-         input.check( /\}/ )  ## add/allow }} too? - why? why not?
-        ## allow empty value!!!
+         input.check( end_re )  ## e.g. }} or ]]
+          ## note: allow empty value!!!
         puts "!! WARN: empty value for param >#{name}<"
       else
-        value = parse_param_value( input )  ## get keyed param value
+        value = parse_param_value( input, end_re: end_re )  ## get keyed param value
         puts "        param value >#{value}<"
       end
     else
-      if input.check( /\|/ ) ||   ## add/allow }} too? - why? why not?
-         input.check( /\}/ )
-        ## allow empty value here too - why? why not?
+      if input.check( /\|/ ) ||
+         input.check( end_re )  ## e.g. }} or ]]
+        ## note: allow empty value here too - why? why not?
         puts "!! WARN: empty value for (unnamed/positioned) param"
       else
-        value = parse_param_value( input )  ## get (unnamed) param value
+        value = parse_param_value( input, end_re: end_re )  ## get (unnamed) param value
         puts "        param value >#{value}<"
       end
     end
@@ -140,7 +141,7 @@ class Parser
   end
 
 
-  def parse_param_value( input ) ## todo: change to parse_param_value_nodes or such - why? why not??
+  def parse_param_value( input, end_re: ) ## todo: change to parse_param_value_nodes or such - why? why not??
     # puts "     [debug] parse_param_value >#{input.peek(10)}...<"
 
     values = []  ## todo - change/rename to nodes??
@@ -151,19 +152,21 @@ class Parser
 
 
       ## puts "      [debug] peek >#{input.peek(10)}...<"
-      if input.check( /\|/ ) || input.check( /\}\}/ )
+      if input.check( /\|/ ) ||
+         input.check( end_re )  ## e.g. }} or ]]
         ## puts "        [debug] break param_value"
         break
       end
 
       if input.eos?
-        puts "!! SYNTAX ERROR: unexpected end of string in param value; expected ending w/ | or }}"
+        puts "!! SYNTAX ERROR: unexpected end of string in param value; expected ending w/ | or #{end_re}"
         exit 1
       end
     end
 
     values
   end
+
 
   def parse_weblink( input )
     ## [https://ec.europa.eu/commfrontoffice/publicopinion/index.cfm/Survey/getSurveyDetail/instruments/SPECIAL/surveyKy/2251 Special Eurobarometer 493, European Union: European Commission, September 2019, pages 229-230]
@@ -211,8 +214,55 @@ class Parser
   end
 
 
+  ##  [[File:The Brabanconne.ogg|center]]
+  ## [[File:Land der Berge Land am Strome instrumental.ogg|center]]
+  ## [[File:La Marseillaise.ogg|alt=sound clip of the Marseillaise French national anthem]]
+  ##
+  ## [[File:Royal Coat of Arms of the United Kingdom.svg|x100px]]
+  ## [[File:Royal Coat of Arms of the United Kingdom (Scotland).svg|x100px]]
+  ##
+  ## [[File:Solvognen-00100.jpg
+  ##     |thumb
+  ##     |left
+  ##     |The gilded side of the [[Trundholm sun chariot]] dating from the Nordic Bronze Age]]
+  ##
+  ## In brief, the syntax for displaying an image is:
+  ## [[File:Name|Type|Border|Location|Alignment|Size|link=Link|alt=Alt|page=Page|lang=Langtag|Caption]]
+  ##
+  ## Plain type means you always type exactly what you see. Bolded italics means a variable.
+  ## Only Name is required. Most images should use "[[File:Name|thumb|alt=Alt|Caption]]" and should not specify a size. The other details are optional and can be placed in any order.
+  ##  see https://en.wikipedia.org/wiki/Wikipedia:Extended_image_syntax
 
+  def parse_filelink( input )
+    input.scan( /\[\[File:/i )
 
+    ## file name
+    name  = input.scan( /[^|\]]+/ ).strip
+
+    puts "==> (begin) file >#{name}<"
+    skip_whitespaces( input )
+
+    params = []
+    loop do
+       skip_comments( input )  if input.check( /<!--/ )  ## note: eat-up inline comments for now
+
+       if input.check( /\]\]/ ) ## e.g. ]]
+         input.scan( /\]\]/ )
+         puts "<== (end) file >#{name}<"
+         ## puts "  params:"
+         ## pp params
+         return Wikitree::File.new( name, params )
+       elsif input.check( /\|/ )  ## e.g. |
+         puts "      param #{params.size+1} (#{name}):"
+         param_name, param_value = parse_param( input, end_re: /\]\]/ )
+         params << [param_name, param_value]
+       else
+         puts "!! SYNTAX ERROR: expected closing ]] or para | in file:"
+         puts input.peek( 100 )
+         exit 1
+       end
+    end
+  end
 
 
   def parse_text( input )
@@ -301,6 +351,12 @@ class Parser
     ## puts "  [debug] parse >#{input.peek(10)}...<"
     if input.check( TEMPLATE_BEGIN_RE )
       parse_template( input )
+    elsif input.check( /\[\[File:/i )
+      parse_filelink( input )
+    elsif input.check( /\[\[:File:/i )
+      puts "!! SORRY - to be done  - inline linked :File:"
+      puts input.peek( 100 )
+      exit 1
     elsif input.check( /\[\[/ )
       parse_pagelink( input )
     ## note:  [http:// or https:// ...] - other [] cases get handled like text!!!

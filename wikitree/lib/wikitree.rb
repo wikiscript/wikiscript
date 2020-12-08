@@ -6,6 +6,7 @@ require 'json'
 require 'wikitree/version' # let it always go first
 require 'wikitree/nodes'      # core/basic nodes
 require 'wikitree/template'   # core/basic nodes
+require 'wikitree/file'       # core/basic nodes
 
 
 
