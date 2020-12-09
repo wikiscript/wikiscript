@@ -21,11 +21,69 @@ class Parser
   def parse
     nodes = parse_lines( @text )
 
-    puts "references:"
-    pp @refs
-    puts
+    ## step 2: resolve references (e.g. auto-number 1,2,3,etc.)
+    resolve_refs( nodes )
 
     nodes
+  end
+
+
+
+  def resolve_refs( nodes )
+    ## pp nodes
+    puts "resolve_references..."
+    _resolve_refs( nodes )
+
+    puts "references:"
+    pp @refs
+    puts "  #{@refs.keys.size} group(s): #{@refs.keys}"
+    puts
+  end
+
+  def _resolve_refs( nodes )  ## recursive worker/helper
+    nodes.each do |node|
+      if node.is_a?( Wikitree::Refname )
+        puts "   #{node.inspect}"
+        group = node.group || 'auto'  ## use another name for default group?
+        group_refs = @refs[ group ] ||= {}
+        name  = node.name
+
+        ## check if has been used already??
+        stat = group_refs[ name ] ||= { count: 0,
+                                        index: group_refs.size+1,
+                                        node: '??' }   ## use a (referece) counter for now
+
+        node.count = stat[:index]
+        stat[:count] += 1   ## add +1 (reference usage) counter too
+      elsif node.is_a?( Wikitree::Ref )
+        puts "   #{node.inspect}"
+        group = node.group || 'auto'  ## use another name for default group?
+        group_refs = @refs[ group ] ||= {}
+
+        ## note: use running (dummy) counter if no name
+        ##         e.g. _1, _2, etc.
+        name  = node.name || "_#{group_refs.size+1}"
+
+        ## check if has been used already??
+        stat = group_refs[ name ] ||= { count: 0,
+                                        index: group_refs.size+1,
+                                        node: node }   ## use a (referece) counter for now
+
+        if stat[:count] > 0  ## bingo found; ref already in-use (auto-numbered)
+          ## add yourself as inline definition too
+          ##  todo/check for duplicate/overwrite - why? why not?!!
+          stat[:node] = node
+        end
+
+        node.count = stat[:index]
+        stat[:count] += 1   ## add +1 (reference usage) counter too
+      else ## keep on searching/resolving refs...
+        if node.children.size > 0
+          ## puts "  walk node >#{node.class.name}< w/ #{node.children.size} children"
+          _resolve_refs( node.children )
+        end
+      end
+    end
   end
 
 
@@ -195,7 +253,7 @@ class Parser
     input.scan( /\]/ )  ## eatup closing ]
     skip_whitespaces( input )
 
-    Wikitree::Weblink.new( href, alt_text )
+    Wikitree::Link.new( href, alt_text )
   end
 
 
@@ -340,11 +398,6 @@ class Parser
 
       puts "==> (begin) ref #{attribs.inspect}"
 
-      group = attribs['group'] || 'auto'  ## use another name for default group?
-      group_refs = @refs[ group ] ||= {}
-      name  = attribs['name'] || "_#{group_refs.size+1}"  ## use a counter if no name provided
-      ## todo/fix: check for/warn if duplicates!!!!
-
       skip_whitespaces( input )
       nodes = []
       loop do
@@ -356,12 +409,8 @@ class Parser
            # puts "  nodes:"
            # pp nodes
 
-           ## todo/check: rename count to index, seq(uence) or .. - why? why not?
-           ref = Wikitree::Ref.new( nodes, name: attribs['name'],
-                                           group: attribs['group'],
-                                           count: group_refs.size+1 )
-           group_refs[ name ] = ref
-           return ref
+           return Wikitree::Ref.new( nodes, name: attribs['name'],
+                                            group: attribs['group'] )
          else
            # puts " add node to ref:"
            nodes << parse_node( input )

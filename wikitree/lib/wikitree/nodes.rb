@@ -3,8 +3,25 @@
 
 module Wikitree
 
+
 class Node
+  # Node children list; # redefined in descendants
+  def children() []; end
+
+  def to_text()  "!! FIX: to be done"; end
+  def to_wiki()  "!! FIX: to be done"; end
+end  ## class Node
+
+
+
+class Collection < Node   ## "composite/compound/collection) node with children
+  attr_reader :children
+
+  def initialize( children )
+    @children = children
+  end
 end
+
 
 
 class Text < Node     ## Text run/segement
@@ -20,70 +37,6 @@ class Text < Node     ## Text run/segement
 
   def inspect
     @text.inspect
-  end
-end
-
-
-
-class Page < Node     ## wiki page link - use a different name - why? why not?
-  def initialize( name, alt_text=nil )
-    @name     = name   ## use page name - why? why not?
-    @alt_text = alt_text
-  end
-
-  def to_text
-    text = @alt_text ? @alt_text : @name
-    " #{text} "  ## note: wrap for now in leading and trailing space!! - fix space issue sometime!!
-  end
-  def to_wiki
-    if @alt_text
-      "[[#{@name}|#{@alt_text}]]"
-    else
-      "[[#{@name}]]"
-    end
-  end
-
-  def inspect
-    if @alt_text
-      "#<page #{@name} | #{@alt_text}>"
-    else
-      "#<page #{@name}>"
-    end
-  end
-end
-
-
-class Weblink < Node     ## web link - use a different name just link - why? why not?
-  def initialize( href, alt_text=nil )
-    @href     = href
-    @alt_text = alt_text   ## todo/check/fix: might just be text NOT alt_text - why? why not?!!!!
-  end
-
-  def to_text
-    ## keep link - just output alt_text - why? why not?
-    if @alt_text
-      ## note: do not use HTML-style <> - for now use french style ‹›
-      ## " ‹#{@href}› #{@alt_text} "
-      " #{@alt_text} "
-    else
-      ## " ‹#{@href}› "
-      " "
-    end
-  end
-  def to_wiki
-    if @alt_text
-      "[#{@href} #{@alt_text}]"
-    else
-      "[#{@href}]"
-    end
-  end
-
-  def inspect
-    if @alt_text
-      "#<weblink #{@href} | #{@alt_text}>"
-    else
-      "#<weblink #{@href}>"
-    end
   end
 end
 

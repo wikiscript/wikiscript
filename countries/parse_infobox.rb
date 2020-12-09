@@ -49,14 +49,16 @@ end
 
 
 
+row =
+ ['Austria','Europe']
+#  'Belgium'
+#  'Mexico'
+#  'France'
+#  'United_States'
+#  'Argentina'
+#   ['United_Kingdom', 'Europe']
 
-# name = 'Austria'
-# name = 'Belgium'
-# name = 'Mexico'
-# name = 'France'
-# name = 'United_States'
-name = 'Argentina'
-# name = 'United_Kingdom'
+name = row[0]
 path = "./wikipedia/infoboxes/en/#{name}.txt"
 
 
@@ -66,6 +68,9 @@ puts text[0..200]
 puts
 
 nodes = Wikiscript.parse( text )
+
+
+
 puts "#{nodes.size} node(s):"
 pp nodes
 

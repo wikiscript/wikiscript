@@ -4,12 +4,17 @@ module Wikitree
 ##############################
 ## Ref (Citation footnote)
 ##  - check: rename to RefInline or such - why? why not?
-class Ref < Node
-  def initialize( nodes=[], count:, name: nil, group: nil )
-    @count = count
+class Ref < Collection
+  attr_reader :name, :group
+  attr_accessor :count   ## note: read/write - gets resolved/set in pass 2
+
+  def initialize( nodes=[], name: nil, group: nil )
+    super( nodes )
+
     @name  = name
     @group = group
-    @nodes = nodes
+
+    @count = nil
   end
 
   def to_text
@@ -21,7 +26,7 @@ class Ref < Node
     end
   end
   def to_wiki
-    text = @nodes.map{|node| node.to_wiki}.join( ' ' )
+    text = @children.map{|node| node.to_wiki}.join( ' ' )
 
     parts = []
     parts << %Q{name="#{@name}"}    if @name
@@ -42,7 +47,7 @@ class Ref < Node
     buf = String.new('')
     buf << "#<ref "
     buf << "#{parts.join( ', ' )} "   if parts.size > 0
-    buf << "#{@nodes.inspect}>"
+    buf << "#{@children.inspect}>"
     buf
   end
 
@@ -54,7 +59,7 @@ class Ref < Node
     pp.text "#<ref "
     pp.text parts.join( ', ' )   if parts.size > 0
     pp.breakable
-    pp.pp @nodes
+    pp.pp @children
     pp.text ">"
   end
 end
@@ -62,17 +67,22 @@ end
 
 ### check: rename to NamedRef or RefNamed or RefRef or  such - why? why not?
 class Refname < Node
+  attr_reader :name, :group
+  attr_accessor :count   ## note: read/write - gets resolved/set in pass 2
+
   def initialize( name, group=nil )
     @name  = name
     @group = group
+
+    @count = nil
   end
 
   def to_text
     ## todo/fix:  return [1], [2] or [a], [b] or such
     if @group
-      "[#{@group} ^??]"  ## e.g. [note 1], [group 1] or such
+      "[#{@group} ^#{@count}]"  ## e.g. [note 1], [group 1] or such
     else
-      "[^??]"
+      "[^#{@count}]"
     end
   end
   def to_wiki
