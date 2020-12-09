@@ -9,6 +9,8 @@ class Parser
   end
 
 
+  attr_reader :refs   # add public refs access - why? why not?
+
   def initialize( text )
     @text = text
 
@@ -19,6 +21,7 @@ class Parser
 
 
   def parse
+    @refs = {}  ## reset references on every parse - why? why not?
     nodes = parse_lines( @text )
 
     ## step 2: resolve references (e.g. auto-number 1,2,3,etc.)
