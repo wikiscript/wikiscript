@@ -11,6 +11,11 @@ require 'wikiscript-parser/parser'
 require 'wikiscript-parser/infobox'
 
 
+require 'wikiscript-parser/helpers/sanitize'
+require 'wikiscript-parser/helpers/references'
+require 'wikiscript-parser/helpers/infobox'
+
+
 
 ####
 # convenience all-in-one parse helper - add - why? why not?

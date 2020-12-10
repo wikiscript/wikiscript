@@ -9,84 +9,13 @@ class Parser
   end
 
 
-  attr_reader :refs   # add public refs access - why? why not?
-
   def initialize( text )
     @text = text
-
-    ## keep track and auto-number references
-    ##  note: references can get grouped
-    @refs = {}
   end
-
 
   def parse
-    @refs = {}  ## reset references on every parse - why? why not?
     nodes = parse_lines( @text )
-
-    ## step 2: resolve references (e.g. auto-number 1,2,3,etc.)
-    resolve_refs( nodes )
-
     nodes
-  end
-
-
-
-  def resolve_refs( nodes )
-    ## pp nodes
-    puts "resolve_references..."
-    _resolve_refs( nodes )
-
-    puts "references:"
-    pp @refs
-    puts "  #{@refs.keys.size} group(s): #{@refs.keys}"
-    puts
-  end
-
-  def _resolve_refs( nodes )  ## recursive worker/helper
-    nodes.each do |node|
-      if node.is_a?( Wikitree::Refname )
-        puts "   #{node.inspect}"
-        group = node.group || 'auto'  ## use another name for default group?
-        group_refs = @refs[ group ] ||= {}
-        name  = node.name
-
-        ## check if has been used already??
-        stat = group_refs[ name ] ||= { count: 0,
-                                        index: group_refs.size+1,
-                                        node: '??' }   ## use a (referece) counter for now
-
-        node.count = stat[:index]
-        stat[:count] += 1   ## add +1 (reference usage) counter too
-      elsif node.is_a?( Wikitree::Ref )
-        puts "   #{node.inspect}"
-        group = node.group || 'auto'  ## use another name for default group?
-        group_refs = @refs[ group ] ||= {}
-
-        ## note: use running (dummy) counter if no name
-        ##         e.g. _1, _2, etc.
-        name  = node.name || "_#{group_refs.size+1}"
-
-        ## check if has been used already??
-        stat = group_refs[ name ] ||= { count: 0,
-                                        index: group_refs.size+1,
-                                        node: node }   ## use a (referece) counter for now
-
-        if stat[:count] > 0  ## bingo found; ref already in-use (auto-numbered)
-          ## add yourself as inline definition too
-          ##  todo/check for duplicate/overwrite - why? why not?!!
-          stat[:node] = node
-        end
-
-        node.count = stat[:index]
-        stat[:count] += 1   ## add +1 (reference usage) counter too
-      else ## keep on searching/resolving refs...
-        if node.children.size > 0
-          ## puts "  walk node >#{node.class.name}< w/ #{node.children.size} children"
-          _resolve_refs( node.children )
-        end
-      end
-    end
   end
 
 
