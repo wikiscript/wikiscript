@@ -12,9 +12,13 @@ module TemplateHelper
     'la' => 'Latin',
   }
 
+
   ## {{native name | de | Republik Österreich}}
   ## {{native name|fr|la République française|nbsp=omit}}
-  def _native_name( lang, txt, **kwargs )
+  ## {{native name|et|Eesti Vabariik|võro|Eesti Vabariik|}}
+  ##  see https://en.wikipedia.org/wiki/Template:Native_name
+  def _native_name( lang, txt, *args, **kwargs )
+    ## note: ignore extra args for now - check used for what?
     lang_name = LANG_NAMES[lang] || lang  ## todo/fix: issue warning if NOT found - why? why not?
     " #{txt} (#{lang_name}) "
   end
@@ -34,7 +38,7 @@ module TemplateHelper
   end
 
   ## {{lang|es|Estados Unidos Mexicanos}}
-  def _lang( lang, txt )
+  def _lang( lang, txt, **kwargs )
     " #{txt} "
   end
 
@@ -68,7 +72,7 @@ module TemplateHelper
 
 
   ## {{plainlist | * Hungarian * Slovene * Burgenland Croatian <ref></ref><ref></ref>}}",
-  def _plainlist( txt )
+  def _plainlist( txt, **kwargs )
     item = txt.split( '*' )
     ## cut off/ dummy leading item (before first item marker)
     item.shift
@@ -90,8 +94,12 @@ module TemplateHelper
 
   ## {{as of | lc=y | June 2020}}
   ##   => estimate as of June 2020
-  def _as_of( date, **kwargs )
-    " as of #{date} "
+  def _as_of( *args, **kwargs )
+    if args.size == 1
+      " as of #{args[0]} "
+    else
+      " as of #{args.join('/')} "
+    end
   end
 
   ## {{abbr | mm | month}}
@@ -237,7 +245,9 @@ module TemplateHelper
 
 
   NOTES = {}
-  def _note( ref )
+  ## {{note|a|}}  -- with empty "ooverflow" arg at the end
+  def _note( ref, *args )
+    ## note: ignore "overflow" args for now
     ## warn if missing mapping - why? why not?
      ## " <NOTE> "
      " #{NOTES[ref]} "
@@ -246,7 +256,7 @@ module TemplateHelper
   ## {{ref label|iboxb|b|}
   ## check with sometime 3 passed in? ignore for now
   def _ref_label( ref, label, *args )
-    NOTES[ ref ] = "^[#{label}]:"
+    NOTES[ ref ] = "[^#{label}]:"
     "[^#{label}]"
   end
 

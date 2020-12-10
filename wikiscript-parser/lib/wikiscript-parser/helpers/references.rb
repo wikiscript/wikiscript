@@ -60,6 +60,23 @@ class References  ## check: rename/use singular - why? why not?
     data
   end
 
+
+=begin
+note: for now log a warning and continue - check if we find more cases
+!! ERROR - only one cite (web/book/etc.) expected per ref,
+   found 2:
+#<ref
+[#<template Cite web:
+ [#<_1 (url):  ["https://www.gov.je/leisure/jersey/pages/anthemjersey.aspx"]>,
+  #<_2 (title):  ["Anthem for Jersey"]>,
+  #<_3 (website):  ["gov.je"]>]>,
+ #<template Cite web:
+ [#<_1 (url):  ["https://www.gov.je/leisure/jersey/pages/anthemjersey.aspx"]>,
+  #<_2 (title):  ["Anthem for Jersey"]>,
+  #<_3 (website):  ["gov.je"]>]>]>
+=end
+
+
   def ref_to_text( refnode )
     nodes = refnode.children
     ## check for cite templates
@@ -68,9 +85,8 @@ class References  ## check: rename/use singular - why? why not?
                              node.name.downcase.start_with?( 'cite')
                          }
     if cites.size > 1
-      puts "!! ERROR - only one cite (web/book/etc.) expected per ref, found #{cites.size}:"
+      puts "!! WARN - only one cite (web/book/etc.) expected per ref, found #{cites.size}:"
       pp refnode
-      exit 1
     end
 
    if cites.size == 0
