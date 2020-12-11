@@ -196,8 +196,8 @@ class Parser
     name     = input.scan( /[^|\]]+/ ).strip
 
     alt_text = if input.check( /\|/ )  ## optional alternate/display text
-                  input.scan( /\|/ )  ## eat up |
-                  input.scan( /[^\]]+/ ).strip
+                 input.scan( /\|/ )  ## eat up |
+                 input.scan( /[^\]]+/ ).strip
                else
                   nil
                end
@@ -212,6 +212,31 @@ class Parser
     end
 
     Wikitree::Page.new( name, alt_text )
+  end
+
+  def parse_categorylink( input )
+    input.scan( /\[\[Category:/i )
+
+    ## page name
+    name     = input.scan( /[^|\]]+/ ).strip
+
+    alt_text = if input.check( /\|/ )  ## optional alternate/display text
+                 input.scan( /\|/ )  ## eat up |
+                 input.scan( /[^\]]+/ ).strip
+               else
+                  nil
+               end
+
+    input.scan( /\]\]/ )  ## eatup ]]
+    skip_whitespaces( input )
+
+    if alt_text
+      puts " @category<#{name} | #{alt_text}>"
+    else
+      puts " @category<#{name}>"
+    end
+
+    Wikitree::Category.new( name, alt_text )
   end
 
 
@@ -366,6 +391,8 @@ class Parser
       puts "!! SORRY - to be done  - inline linked :File:"
       puts input.peek( 100 )
       exit 1
+    elsif input.check( /\[\[Category:/i )
+      parse_categorylink( input )
     elsif input.check( /\[\[/ )
       parse_pagelink( input )
     ## note:  [http:// or https:// ...] - other [] cases get handled like text!!!
