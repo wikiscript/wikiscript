@@ -11,3 +11,10 @@ temp/
 o
 o/
 
+
+###
+# ignore logs
+*.log
+normalized.log
+redirects.log
+
