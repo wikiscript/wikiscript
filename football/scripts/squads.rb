@@ -30,8 +30,9 @@ class Squad   # Squad record
 
   def to_rec( opts={} )
     
-    sort_by_pos =  opts[:sort] ? true : false
-
+    sort_by_pos =  opts[:sort]     ? true : false
+    comments    =  opts[:comments] ? true : false
+      
     if sort_by_pos
       players = @players.sort { |l,r| cmp_by_pos( l,r ) }
     else
@@ -41,8 +42,8 @@ class Squad   # Squad record
     last_pos = nil
 
 
-    buf = ''
-    buf << "#   - #{@players.size} players\n"
+    buf = String.new
+    buf << "#   - #{@players.size} players\n"   if comments
     buf << "\n"
 
     players.each do |p|

@@ -7,24 +7,35 @@ class Player   # Player record
                 :name, :name_wiki,
                 :club, :club_wiki,
                 :clubnat,
-                :caps
-
-  def initialize
-  end
+                :caps, :goals
 
   def to_rec
-    no_str   = no.nil?    ? '-' : "(#{no})"
-    caps_str = caps.nil?  ? '-' : caps.to_s
+    no_str   = @no.nil?    ? '-' : "#{@no}"
+    caps_str = @caps.nil?  ? '-' : '%3d/%-3d' % [@caps,@goals]
 
-    buf = ''
-    buf << "%4s  "   % no_str
-    buf << "%2s  "   % "#{pos}"
-    buf << "%-33s  " % "#{name}"
-    buf << '## '
-    buf << "%4s, "   % caps_str
-    buf << "#{club} "
-    buf << "(#{clubnat})"  if clubnat
+    buf = String.new
+    buf << "%4s  "  % "#{no_str},"
+    buf << "%-33s  " % "#{@name},"
+    buf << "%3s  "   % "#{@pos},"
+    buf << '  '
+    buf << "%8s  "    % "#{caps_str},"
+    buf << "#{norm_wiki(@club_wiki)} "   ## note - use club_wiki
+    buf << "(#{@clubnat})"  if @clubnat
     buf
+  end
+
+
+  ##########
+  # helpers
+  def norm_wiki( str )
+    #  normalize wiki links (remove qualifiers) e.g.
+    #
+    #  Fenerbahçe S.K. (football)  => Fenerbahçe S.K. 
+    #  Al-Ittihad Club (Jeddah)    => Al-Ittihad Club
+ 
+    str = str.sub( '(football)', '' ).
+              sub( '(Jeddah)', '').strip
+    str
   end
 
 end # class Player

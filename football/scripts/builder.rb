@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 ###############################################3
 ## wiki(text) squads reader for football.db
 
@@ -51,16 +49,27 @@ class SquadsBuilder
     \]\]
   }
 
-  FS_START_REGEX  = /(nat fs|National football squad) start/
-  FS_PLAYER_REGEX = /(nat fs|National football squad) player/
-  FS_END_REGEX    = /(nat fs|National football squad) end/
+##
+##  {{National football squad start (goals)}}, or {{Nat fs g start}} in short.
+##  -> en.wikipedia.org/wiki/Template:National_football_squad_start_(goals)
+##   or
+##  {National football squad start}}, or {{Nat fs start}} in short.
+
+  FS_START_REGEX  = /nat fs (g )?start|National football squad start( \(goals\)?)/
+
+  FS_PLAYER_REGEX = /nat fs (g )?player|National football squad player/
+
+  FS_END_REGEX    = /nat fs (g )?end|National football squad end/
+
+
+
 
   FS_PLAYER_NAME_REGEX = /\b
-                          name=#{WIKI_LINK_PATTERN}
+                          name=[ ]*#{WIKI_LINK_PATTERN}
                          /x
 
   FS_PLAYER_CLUB_REGEX = /\b
-                          club=#{WIKI_LINK_PATTERN}
+                          club=[ ]*#{WIKI_LINK_PATTERN}
                          /x
 
   FS_PLAYER_CLUBNAT_REGEX = /\b
@@ -83,6 +92,11 @@ class SquadsBuilder
                           caps=
                            (?<caps>[0-9]+)
                           \b/x
+  FS_PLAYER_GOALS_REGEX = /\b
+                          goals=
+                           (?<goals>[0-9]+)
+                          \b/x
+
 
   FS_PLAYER_POS_REGEX = /\b
                            pos=
@@ -92,10 +106,12 @@ class SquadsBuilder
 
   def read( name, opts={} )
 
-    ## e.g. world cup 1930 to 1950 has no player nos (allows to skip player nos - will all be nil)
+    ## e.g. world cup 1930 to 1950 has no player nos 
+    ##   (allows to skip player nos - will all be nil)
     skip_player_no = opts[:skip_player_no].nil? ? false : opts[:skip_player_no]
 
     path = "#{include_path}/#{name}.txt"
+    logger.debug "  path=#{path}"
 
     @squads = []
     squad  = nil   ## current squad
@@ -112,6 +128,10 @@ class SquadsBuilder
 
       line = line.gsub( '{{0}}', '' )  ## remove {{0}}  empty infoset? or what does it mean? check/find out
       line = line.gsub( "'''", '' )   ## remove bold marker
+
+
+      logger.debug "line #{lineno+1}"
+      logger.debug "   #{line}"
 
 
       if line =~ FS_START_REGEX
@@ -138,6 +158,10 @@ class SquadsBuilder
             player.name      = h[:link]  # link is also title
             player.name_wiki = h[:link]
           end
+        else
+          puts "!! ERROR - no player name found in line:"
+          puts line
+          exit 1
         end
 
         m=FS_PLAYER_CLUB_REGEX.match( line )
@@ -164,7 +188,9 @@ class SquadsBuilder
         end
 
         m = FS_PLAYER_CAPS_REGEX.match( line )
-        player.caps = m[:caps].to_i  if m   # note: convert string to number (integer)
+        player.caps  = m[:caps].to_i  if m   # note: convert string to number (integer)
+        m = FS_PLAYER_GOALS_REGEX.match( line )
+        player.goals = m[:goals].to_i  if m   # note: convert string to number (integer)
 
         m = FS_PLAYER_POS_REGEX.match( line )
         player.pos = m[:pos] if m
@@ -187,7 +213,8 @@ class SquadsBuilder
       # puts squad.to_rec
 
       puts " squad ##{i+1} (sorted)"
-      puts squad.to_rec( sort: true )
+      puts squad.to_rec( sort: true, 
+                         comments: true )
     end
   end
 
@@ -203,7 +230,7 @@ class SquadsBuilder
 
     @squads.each_with_index do |squad,i|
       team_key = names[i]
-      team = TEAMS[ team_key.to_sym ]
+      team = TEAMS[ team_key.downcase.to_sym ]
 
       if team.nil?   # unknow team key
         puts " !!!!! unknown team key >#{team_key}<; no team mapping record/entry found"
@@ -223,8 +250,8 @@ class SquadsBuilder
       filemode = append ? 'a' : 'w'
 
       File.open( path, filemode ) do |f|
-          f << "##############################\n"
-          f << "# #{teamname} \n"
+          f << "==========================\n"
+          f << "=  #{teamname} \n\n"
           f << squad.to_rec( sort: true )
       end
 
