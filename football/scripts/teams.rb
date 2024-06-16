@@ -70,6 +70,7 @@ TEAMS = {
   swe: [ 'sweden',      'Sweden' ],
   swe_ii: [ 'sweden',   'Sweden Reserves in Standby', 'a' ],  ## file mode append!!!
   den: [ 'denmark',     'Denmark' ],
+  fin: [ 'finland',     'Finland' ],
   ned: [ 'netherlands', 'Netherlands' ],
   cro: [ 'croatia',     'Croatia' ],
   svn: [ 'slovenia',    'Slovenia' ],
@@ -77,6 +78,7 @@ TEAMS = {
   cze: [ 'czech-republic', 'Czech Republic' ],
   alb: [ 'albania',       'Albania'],
   geo: [ 'georgia',       'Georgia'],
+  mkd: [ 'north-macedonia', 'North Macedonia'],
 
   gre: [ 'greece',      'Greece' ],
   irl: [ 'ireland',     'Ireland' ],
