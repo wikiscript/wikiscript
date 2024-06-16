@@ -1,4 +1,3 @@
-# encoding: utf-8
 
 
 class Player   # Player record
@@ -7,7 +6,8 @@ class Player   # Player record
                 :name, :name_wiki,
                 :club, :club_wiki,
                 :clubnat,
-                :caps, :goals
+                :caps, :goals,
+                :birthyear
 
   def to_rec
     no_str   = @no.nil?    ? '-' : "#{@no}"
@@ -18,9 +18,10 @@ class Player   # Player record
     buf << "%-33s  " % "#{@name},"
     buf << "%3s  "   % "#{@pos},"
     buf << '  '
-    buf << "%8s  "    % "#{caps_str},"
-    buf << "#{norm_wiki(@club_wiki)} "   ## note - use club_wiki
-    buf << "(#{@clubnat})"  if @clubnat
+    buf << "%8s "    % "#{caps_str},"
+    buf << "b. #{@birthyear},  "
+    buf << "#{norm_wiki(@club_wiki)} "    ## note - use club_wiki
+    buf << "(#{norm_clubnat(norm_wiki(@club_wiki),@clubnat)})"   if @clubnat
     buf
   end
 
@@ -32,10 +33,24 @@ class Player   # Player record
     #
     #  Fenerbahçe S.K. (football)  => Fenerbahçe S.K. 
     #  Al-Ittihad Club (Jeddah)    => Al-Ittihad Club
+    #  Al Shabab FC (Riyadh)       => Al Shabab FC
  
     str = str.sub( '(football)', '' ).
+              sub( '(Riyadh)', '' ).
               sub( '(Jeddah)', '').strip
     str
   end
+
+
+  def norm_clubnat( club, clubnat )
+      ## do NOT use league for country now - why? why not?
+    # AS Monaco FC (FRA)  => (MCO)
+    if club == 'AS Monaco FC'  
+       'MCO'
+    else
+      clubnat
+    end
+  end
+
 
 end # class Player

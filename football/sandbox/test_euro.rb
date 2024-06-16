@@ -35,7 +35,7 @@ require_relative '../scripts/builder'
      BEL SVK ROU UKR
      TUR GEO POR CZE
   ]
-  b.write( teams )
+  b.write( teams, league: 'Euro 2024' )
 
 
  

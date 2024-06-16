@@ -77,6 +77,18 @@ class SquadsBuilder
                             (?<clubnat>[A-Z]{3})
                              \b/x
 
+  ##
+  #  {{birth date and age2|df=y|2024|6|14|1988|2|15}} or
+  ##  {{Birth date and age2|2024|6|14|1992|4|30|df=y}}
+  FS_PLAYER_BIRTHYEAR_REGEX = /\{\{
+                                 birth[ ]date
+                                    [^}]+?    ### skip all before (non-greedy) last date
+                                    \|(?<year>[0-9]{4})
+                                    \|(?<month>[0-9]{1,2})
+                                    \|(?<day>[0-9]{1,2})
+                                      [^0-9]*?   ## allow more params (with no digits) here
+                                  \}\}
+                              /ix
 
   ## todo:
   ##  check for empty (no number) e.g.   no=-      -- see world cup squads 1930
@@ -164,6 +176,15 @@ class SquadsBuilder
           exit 1
         end
 
+        m=FS_PLAYER_BIRTHYEAR_REGEX.match( line )
+        if m
+          player.birthyear = m[:year].to_i    
+        else
+          puts " no birthyear in:"
+          puts line
+          exit 1
+        end
+
         m=FS_PLAYER_CLUB_REGEX.match( line )
         if m
           h = {}
@@ -219,7 +240,8 @@ class SquadsBuilder
   end
 
   
-  def write( names )
+  ## use league_name - why? why not?
+  def write( names, league: )   
 
     ## dump squads
     
@@ -251,7 +273,7 @@ class SquadsBuilder
 
       File.open( path, filemode ) do |f|
           f << "==========================\n"
-          f << "=  #{teamname} \n\n"
+          f << "=  #{teamname} - #{league}\n\n"
           f << squad.to_rec( sort: true )
       end
 
