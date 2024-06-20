@@ -13,7 +13,7 @@ TEAMS = {
   ven: [ 'venezuela',  'Venezuela' ],
   pan: [ 'panama',     'Panama' ],
 
-  usa: [ 'united-states', 'United State' ],
+  usa: [ 'united-states', 'United States' ],
   mex: [ 'mexico',        'Mexico' ],
   can: [ 'canada',        'Canada' ],
 
