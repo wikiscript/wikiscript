@@ -8,34 +8,31 @@ require_relative '../scripts/builder'
   #### LogUtils::Logger.root.level = :debug
  LogUtils::Logger.root.level = :info
 
-  srcdir = '../../football.json/_source/squads/euro-cup'
+  srcdir = '../../football.json/_source/squads/copa-america'
   b = SquadsBuilder.new( srcdir )
 
 
-pages = [
-  { name: 'UEFA_Euro_2024_squads',   ## 24 teams (euro 2024)
+pages = [ 
+  { name: '2024_Copa_América_squads', # 16(!) teams (6 guests)
     teams: %w[
-      GER SCO HUN SUI
-      ESP CRO ITA ALB
-      SVN DEN SRB ENG
-      POL NED AUT FRA
-      BEL SVK ROU UKR
-      TUR GEO POR CZE
-     ], 
-     league: 'Euro 2024',
+      ARG PER CHI CAN
+      MEX ECU VEN JAM
+      USA URU PAN BOL
+      BRA COL PAR CRC
+   ],
+   league: 'Copa América 2024',   ##  for export
   },
-  {  name: 'UEFA_Euro_2020_squads', 
-     teams: %w[
-       ITA SUI TUR WAL
-       BEL DEN FIN RUS
-       AUT NED MKD UKR
-       CRO CZE ENG SCO
-       POL SVK ESP SWE
-       FRA GER HUN POR
-     ],
-     league: 'Euro 2021',   ## note - use Euro 2021 (not 2020)
+  ### note - Copa América 2021
+  ##           some teams player replacements during tournament!!!
+  ##          add from/until date - why? why not?
+  { name: '2021_Copa_América_squads',  # 10 teams
+    teams: %w[
+      ARG BOL URU CHI PAR
+      BRA COL VEN ECU PER
+    ],
+    league: 'Copa América 2021',   ##  for export
   },
-]
+]  
 
 
 
@@ -59,7 +56,8 @@ pages.each_with_index do |page,i|
            league: page[:league] )
 end
 
-
 puts "bye"
+
+
 
     

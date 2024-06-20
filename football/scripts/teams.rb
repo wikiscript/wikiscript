@@ -2,59 +2,60 @@
 TEAMS = {
   arg: [ 'argentina', 'Argentina' ],
   arg_ii: [ 'argentina', 'Argentina Replacements', 'a' ],
-  chi: [ 'cl-chile',     'Chile (CHI)' ],
-  bra: [ 'br-brazil',    'Brazil (BRA)' ],
-  bol: [ 'bo-bolivia',   'Bolivia (BOL)' ],
-  uru: [ 'uy-uruguay',   'Uruguay (URU)' ],
-  per: [ 'pe-peru',      'Peru (PER)' ],
-  par: [ 'py-paraguay',  'Paraguay (PAR)' ],
-  col: [ 'co-colombia',  'Colombia (COL)' ],
-  ecu: [ 'ec-ecuador',   'Ecuador (ECU)' ],
+  chi: [ 'chile',     'Chile' ],
+  bra: [ 'brazil',    'Brazil' ],
+  bol: [ 'bolivia',   'Bolivia' ],
+  uru: [ 'uruguay',   'Uruguay' ],
+  per: [ 'peru',      'Peru' ],
+  par: [ 'paraguay',  'Paraguay' ],
+  col: [ 'colombia',  'Colombia' ],
+  ecu: [ 'ecuador',   'Ecuador' ],
+  ven: [ 'venezuela',  'Venezuela' ],
+  pan: [ 'panama',     'Panama' ],
+
+  usa: [ 'united-states', 'United State' ],
+  mex: [ 'mexico',        'Mexico' ],
+  can: [ 'canada',        'Canada' ],
+
+  slv: [ 'el-salvador',   'El Salvador' ],
+  crc: [ 'costa-rica',    'Costa Rica' ],
+  hon: [ 'honduras',      'Honduras' ],
+  cub: [ 'cuba',          'Cuba' ],
+  hai: [ 'haiti',         'Haiti' ],
+  jam: [ 'jamaica',       'Jamaica' ],
+  tri: [ 'trinidad-tobago', 'Trinidad n Tobago' ],
 
 
-  usa: [ 'us-united-states', 'United States (USA)' ],
-  mex: [ 'mx-mexico',        'Mexico (MEX)' ],
-  can: [ 'ca-canada',        'Canada (CAN)' ],
-
-  slv: [ 'sv-el-salvador',   'El Salvador (SLV)' ],
-  crc: [ 'cr-costa-rica',    'Costa Rica (CRC)' ],
-  hon: [ 'hn-honduras',      'Honduras (HON)' ],
-  cub: [ 'cu-cuba',          'Cuba (CUB)' ],
-  hai: [ 'ht-haiti',         'Haiti (HAI)' ],
-  jam: [ 'jm-jamaica',       'Jamaica (JAM)' ],
-  tri: [ 'tt-trinidad-tobago', 'Trinidad n Tobago (TRI)' ],
+  aus: [ 'australia',     'Australia' ],
+  nzl: [ 'new-zealand',   'New Zealand' ],
 
 
-  aus: [ 'au-australia',     'Australia (AUS)' ],
-  nzl: [ 'nz-new-zealand',   'New Zealand (NZL)' ],
+  jpn: [ 'japan',         'Japan' ],
+  kor: [ 'south-korea',   'South Korea' ],
+  prk: [ 'north-korea',   'North Korea' ],
+  chn: [ 'china',         'China' ],
 
 
-  jpn: [ 'jp-japan',         'Japan (JPN)' ],
-  kor: [ 'kr-south-korea',   'South Korea (KOR)' ],
-  prk: [ 'kp-north-korea',   'North Korea (PRK)' ],
-  chn: [ 'cn-china',         'China (CHN)' ],
+  irn: [ 'iran',          'Iran' ],
+  irq: [ 'iraq',          'Iraq' ],
+  isr: [ 'israel',        'Israel' ],
+  kuw: [ 'kuwait',        'Kuwait' ],
+  uae: [ 'united-arab-emirates', 'United Arab Emirates' ],
+  ksa: [ 'saudi-arabia',  'Saudi Arabia' ],
 
 
-  irn: [ 'ir-iran',          'Iran (IRN)' ],
-  irq: [ 'iq-iraq',          'Iraq (IRQ)' ],
-  isr: [ 'il-israel',        'Israel (ISR)' ],
-  kuw: [ 'kw-kuwait',        'Kuwait (KUW)' ],
-  uae: [ 'ae-united-arab-emirates', 'United Arab Emirates (UAE)' ],
-  ksa: [ 'sa-saudi-arabia',  'Saudi Arabia (KSA)' ],
-
-
-  alg: [ 'dz-algeria',       'Algeria (ALG)' ],
-  mar: [ 'ma-morocco',       'Morocco (MAR)' ],
-  tun: [ 'tn-tunisia',       'Tunisia (TUN)' ],
-  egy: [ 'eg-egypt',         'Egypt (EGY)' ],
-  cmr: [ 'cm-cameroon',      'Cameroon (CMR)' ],
-  civ: [ 'ci-cote-d-ivoire', "Côte d'Ivoire (CIV)" ],
-  nga: [ 'ng-nigeria',       'Nigeria (NGA)' ],
-  gha: [ 'gh-ghana',         'Ghana (GHA)' ],
-  rsa: [ 'za-south-africa',  'South Africa (RSA)' ],
-  sen: [ 'sn-senegal',       'Senegal (SEN)' ],
-  ang: [ 'ao-angola',        'Angola (ANG)' ],
-  tog: [ 'tg-togo',          'Togo (TOG)' ],
+  alg: [ 'algeria',       'Algeria' ],
+  mar: [ 'morocco',       'Morocco' ],
+  tun: [ 'tunisia',       'Tunisia' ],
+  egy: [ 'egypt',         'Egypt' ],
+  cmr: [ 'cameroon',      'Cameroon' ],
+  civ: [ 'cote-d-ivoire', "Côte d'Ivoire" ],
+  nga: [ 'nigeria',       'Nigeria' ],
+  gha: [ 'ghana',         'Ghana' ],
+  rsa: [ 'south-africa',  'South Africa' ],
+  sen: [ 'senegal',       'Senegal' ],
+  ang: [ 'angola',        'Angola' ],
+  tog: [ 'togo',          'Togo' ],
 
 
   fra: [ 'france',      'France' ],
@@ -97,12 +98,12 @@ TEAMS = {
   ukr_ii: [ 'ukraine',     'Ukraine Replacements', 'a' ],
 
   ### old (historic) teams
-  yug: [ 'yug-yugoslavia',     'Yuguslavia (YUG)' ],
-  tch: [ 'tch-czechoslovakia', 'Czechoslovakia (TCH)' ],
-  frg: [ 'frg-west-germany',   'West Germany (FRG)' ],
-  gdr: [ 'gdr-east-germany',   'East Germany (GDR)' ],
-  urs: [ 'urs-soviet-union',   'Soviet Union (URS)' ],
-  zai: [ 'zai-zaire',          'Zaire (ZAI)' ],  # now Congo DR
-  dei: [ 'dei-dutch-east-indies', 'Dutch East Indies (DEI)' ],  # now Indonesia
+  yug: [ 'yugoslavia',     'Yuguslavia' ],
+  tch: [ 'czechoslovakia', 'Czechoslovakia' ],
+  frg: [ 'west-germany',   'West Germany' ],
+  gdr: [ 'east-germany',   'East Germany' ],
+  urs: [ 'soviet-union',   'Soviet Union' ],
+  zai: [ 'zaire',          'Zaire' ],  # now Congo DR
+  dei: [ 'dutch-east-indies', 'Dutch East Indies' ],  # now Indonesia
 }
 

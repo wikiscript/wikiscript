@@ -55,27 +55,46 @@ class SquadsBuilder
 ##   or
 ##  {National football squad start}}, or {{Nat fs start}} in short.
 
-  FS_START_REGEX  = /nat fs (g )?start|National football squad start( \(goals\)?)/
+  FS_START_REGEX  = /nat fs (g )?start|National football squad start( \(goals\)?)/i
 
-  FS_PLAYER_REGEX = /nat fs (g )?player|National football squad player/
+  ## or {{Nat ...  ## use case-insensitive !!!
+  FS_PLAYER_REGEX = /nat fs (g )?player|National football squad player/i
 
-  FS_END_REGEX    = /nat fs (g )?end|National football squad end/
+  FS_END_REGEX    = /nat fs (g )?end|National football squad end/i
 
 
+
+## opt 1)
+##   name=[[Manuel Ugarte (footballer)|Manuel Ugarte]]
+## opt 2)  
+##   name={{sortname|Matt|Turner|dab=soccer}}   or
+##    name={{sortname|Tyler|Adams}}
 
 
   FS_PLAYER_NAME_REGEX = /\b
                           name=[ ]*#{WIKI_LINK_PATTERN}
-                         /x
+                         /ix
+
+FS_PLAYER_SORTNAME_REGEX = /\b
+                             name=[ ]*\{\{
+                             sortname
+                             \|(?<first>[^|]+)    ## first name
+                             \|(?<last>[^|\}]+)     ## last name
+                             (\|
+                               [^}]+?
+                              )?      ### skip all before (non-greedy) e.g. |dab=soccer
+                              \}\}
+                            /ix
+
 
   FS_PLAYER_CLUB_REGEX = /\b
                           club=[ ]*#{WIKI_LINK_PATTERN}
-                         /x
+                         /ix
 
   FS_PLAYER_CLUBNAT_REGEX = /\b
                           clubnat=
                             (?<clubnat>[A-Z]{3})
-                             \b/x
+                             \b/ix
 
   ##
   #  {{birth date and age2|df=y|2024|6|14|1988|2|15}} or
@@ -96,24 +115,24 @@ class SquadsBuilder
   FS_PLAYER_NO_REGEX = /\b
                           no=\s*
                            (?<no>[0-9]+)
-                        \b/x
+                        \b/ix
 
   ## todo:
   ##  check for empty (no caps) e.g.   caps=-      -- see world cup squads 1930
   FS_PLAYER_CAPS_REGEX = /\b
                           caps=
                            (?<caps>[0-9]+)
-                          \b/x
+                          \b/ix
   FS_PLAYER_GOALS_REGEX = /\b
                           goals=
                            (?<goals>[0-9]+)
-                          \b/x
+                          \b/ix
 
 
   FS_PLAYER_POS_REGEX = /\b
                            pos=
                            (?<pos>[A-Z]{2,})
-                          \b/x
+                          \b/ix
 
 
   def read( name, opts={} )
@@ -139,8 +158,8 @@ class SquadsBuilder
       ##     no=1              or no=1
 
       line = line.gsub( '{{0}}', '' )  ## remove {{0}}  empty infoset? or what does it mean? check/find out
-      line = line.gsub( "'''", '' )   ## remove bold marker
-
+      line = line.gsub( /'{2,}/, '' )   ## remove italic ('') or bold marker ('''')
+      
 
       logger.debug "line #{lineno+1}"
       logger.debug "   #{line}"
@@ -153,23 +172,26 @@ class SquadsBuilder
         logger.debug "end squads block (line #{lineno+1})"
         @squads << squad
       elsif line =~ FS_PLAYER_REGEX
-        logger.debug "  parse squads player line (line #{lineno+1})"
+        # logger.debug
+        puts "  parse squads player line (line #{lineno+1})"
 
         player = Player.new
         
         m=FS_PLAYER_NAME_REGEX.match( line )
         if m
-          h = {}
-          # - note: do NOT forget to turn name into symbol for lookup in new hash (name.to_sym)
-          m.names.each { |n| h[n.to_sym] = m[n] } # or use match_data.names.zip( match_data.captures ) - more cryptic but "elegant"??
-
-          if h[:title]
-            player.name      = h[:title]
-            player.name_wiki = h[:link]
+          if m[:title]
+            player.name      = m[:title]
+            player.name_wiki = m[:link]
           else
-            player.name      = h[:link]  # link is also title
-            player.name_wiki = h[:link]
+            player.name      = m[:link]  # (page) link is also used as title
+            player.name_wiki = m[:link]
           end
+        elsif m=FS_PLAYER_SORTNAME_REGEX.match( line )   ## try variant/option two (ii)
+           ## assume (sort)first name + last name is title is link
+           pp m     
+           name = "#{m[:first]} #{m[:last]}"
+           player.name      = name
+           player.name_wiki = name 
         else
           puts "!! ERROR - no player name found in line:"
           puts line
@@ -187,16 +209,12 @@ class SquadsBuilder
 
         m=FS_PLAYER_CLUB_REGEX.match( line )
         if m
-          h = {}
-          # - note: do NOT forget to turn name into symbol for lookup in new hash (name.to_sym)
-          m.names.each { |n| h[n.to_sym] = m[n] } # or use match_data.names.zip( match_data.captures ) - more cryptic but "elegant"??
-
-          if h[:title]
-            player.club      = h[:title]
-            player.club_wiki = h[:link]
+          if m[:title]
+            player.club      = m[:title]
+            player.club_wiki = m[:link]
           else
-            player.club      = h[:link]  # link is also title
-            player.club_wiki = h[:link]
+            player.club      = m[:link]  # link is also title
+            player.club_wiki = m[:link]
           end
         end
 
@@ -272,7 +290,7 @@ class SquadsBuilder
       filemode = append ? 'a' : 'w'
 
       File.open( path, filemode ) do |f|
-          f << "==========================\n"
+          f << "====================================\n"
           f << "=  #{teamname} - #{league}\n\n"
           f << squad.to_rec( sort: true )
       end

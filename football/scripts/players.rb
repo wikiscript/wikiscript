@@ -13,6 +13,8 @@ class Player   # Player record
     no_str   = @no.nil?    ? '-' : "#{@no}"
     caps_str = @caps.nil?  ? '-' : '%3d/%-3d' % [@caps,@goals]
 
+
+
     buf = String.new
     buf << "%4s  "  % "#{no_str},"
     buf << "%-33s  " % "#{@name},"
@@ -29,6 +31,10 @@ class Player   # Player record
   ##########
   # helpers
   def norm_wiki( str )
+    if str.nil?
+      puts "!! WARN - club_wiki is nil"
+      return nil
+    end
     #  normalize wiki links (remove qualifiers) e.g.
     #
     #  Fenerbahçe S.K. (football)  => Fenerbahçe S.K. 
