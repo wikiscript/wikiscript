@@ -39,6 +39,7 @@ class PageReader
 
         puts "heading #{heading_level} >#{heading}<"
         page << [:"h#{heading_level}", heading]
+=begin
       elsif line.start_with?( '{|' )     ## start table
         inside_table = true
         table_txt = String.new   ## collect table source text
@@ -52,9 +53,10 @@ class PageReader
         table_txt    = nil
       elsif inside_table
          table_txt << line << "\n"
+=end
       else
         ## note: skip unknown line types for now
-        
+
         ## puts "** !!! ERROR !!! unknown line type in wiki page:"
         ## pp line
         ## exit 1

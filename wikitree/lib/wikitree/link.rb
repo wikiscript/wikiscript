@@ -1,11 +1,13 @@
 module Wikitree
 
 
+
 class Link < Node     ## fix: change to just weblink / Link - why? why not? - web link - use a different name just link - why? why not?
   def initialize( href, alt_text=nil )
     @href     = href
     @alt_text = alt_text   ## todo/check/fix: might just be text NOT alt_text - why? why not?!!!!
   end
+
 
   def to_text
     ## keep link - just output alt_text - why? why not?

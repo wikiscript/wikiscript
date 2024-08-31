@@ -53,7 +53,9 @@ class Parser
   ## todo/fix: check how to add # too!!!
   ##  todo: check what chars to escape in character class
   ##  change to something line [^|<>\[\]{}]+ ]
-  TEMPLATE_NAME_RE = %r{[a-z0-9!/\\()*:#," _-]+}i
+  ##   add more
+  ##  e.g  2023–24
+  TEMPLATE_NAME_RE = %r{[a-z0-9!/\\()*:#," _–-]+}i
 
 
   ## note: is an allowed template too!!
