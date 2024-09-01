@@ -3,7 +3,7 @@
 #     content_type: text/x-wiki
 #
 #  to run use:
-#    $ ruby download.rb
+#    $ ruby download_more.rb
 
 
 $LOAD_PATH.unshift( File.expand_path( '../wikiscript/lib' ))
@@ -11,8 +11,14 @@ require 'wikiscript'
 
 
 
-# title = '2023–24_UEFA_Champions_League_group_stage'
-title = '2024–25_UEFA_Champions_League_league_phase'
+# title = 'UEFA_Euro_2024'
+# title = 'UEFA_Euro_2020'
+# title = 'UEFA_Euro_2016'
+# title = 'UEFA_Euro_2024_Group_A'
+# title = '2024_Copa_América'
+title = '2024_Copa_América_Group_A'
+title = '2024_Copa_América_knockout_stage'
+
 
 page = Wikiscript.get( title )
 pp page
