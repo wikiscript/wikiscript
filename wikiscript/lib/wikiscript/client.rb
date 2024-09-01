@@ -1,19 +1,13 @@
-# encoding: utf-8
 
 module Wikiscript
 
   class Client
+    include Logging
 
-    include LogUtils::Logging
-
-    SITE_BASE = 'http://{lang}.wikipedia.org/w/index.php'
+    SITE_BASE = 'https://{lang}.wikipedia.org/w/index.php'
 
     ### API_BASE  = 'http://en.wikipedia.org/w/api.php'
 
-    def initialize( opts={} )
-      @opts   = opts
-      @worker = Fetcher::Worker.new
-    end
 
     ## change to: wikitext or raw why? why not? or to raw? why? why not?
     def text( title, lang: Wikiscript.lang )
@@ -24,7 +18,7 @@ module Wikiscript
       # becomes
       #   http://en.wikipedia.org/w/index.php  or
       #   http://de.wikipedia.org/w/index.php  etc
-      base_url = SITE_BASE.gsub( "{lang}", lang )
+      base_url = SITE_BASE.sub( "{lang}", lang )
       params   = { action: 'raw',
                    title:  title }
 
@@ -33,6 +27,10 @@ module Wikiscript
 
 private
     def build_query( h )
+
+      ## todo/fix - check what to use for params encode
+      ##   e.g. escape_component or such?
+      ##   fix add params upstream to weblclient - why? why not?
       h.map do |k,v|
         "#{CGI.escape(k.to_s)}=#{CGI.escape(v.to_s)}"
       end.join( '&' )
@@ -48,27 +46,12 @@ private
       ## fix: pass in uri (add to fetcher check for is_a? URI etc.)
       uri_string = "#{base_url}?#{query}"
 
-      response = @worker.get_response( uri_string )
+      response = Webclient.get( uri_string )
 
-      if response.code == '200'
-        t = response.body
-        ###
-        # NB: Net::HTTP will NOT set encoding UTF-8 etc.
-        # will mostly be ASCII
-        # - try to change encoding to UTF-8 ourselves
-        logger.debug "t.encoding.name (before): #{t.encoding.name}"
-        #####
-        # NB: ASCII-8BIT == BINARY == Encoding Unknown; Raw Bytes Here
-
-        ## NB:
-        # for now "hardcoded" to utf8 - what else can we do?
-        # - note: force_encoding will NOT change the chars only change the assumed encoding w/o translation
-        t = t.force_encoding( Encoding::UTF_8 )
-        logger.debug "t.encoding.name (after): #{t.encoding.name}"
-        ## pp t
-        t
+      if response.status.ok?
+        response.text
       else
-        logger.error "fetch HTTP - #{response.code} #{response.message}"
+        logger.error "HTTP ERROR - #{response.status.code} #{response.status.message}"
         exit 1    ### exit for now on error - why? why not?
         ## nil
       end

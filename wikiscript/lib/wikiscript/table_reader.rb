@@ -1,11 +1,10 @@
-# encoding: utf-8
 
 module Wikiscript
 
 class TableReader
 
-  def self.read( path )   ## use - rename to read_file or from_file etc. - why? why not?
-    txt = File.open( path, 'r:utf-8' ).read
+  def self.read( path )
+    txt = File.open( path, 'r:utf-8' ) { |f| f.read }
     parse( txt )
   end
 

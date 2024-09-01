@@ -1,14 +1,12 @@
-# encoding: utf-8
-
 ###
 #  to run use
-#     ruby -I ./lib -I ./test test/test_page_reader.rb
+#     ruby test/test_page_reader.rb
 
 
-require 'helper'
+require_relative 'helper'
 
 
-class TestPageReader < MiniTest::Test
+class TestPageReader < Minitest::Test
 
   def test_basic
     nodes = Wikiscript.parse( <<TXT )

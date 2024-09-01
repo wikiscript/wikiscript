@@ -1,14 +1,12 @@
-# encoding: utf-8
-
 ###
 #  to run use
-#     ruby -I ./lib -I ./test test/test_link.rb
+#     ruby test/test_link.rb
 
 
-require 'helper'
+require_relative 'helper'
 
 
-class TestLink < MiniTest::Test
+class TestLink < Minitest::Test
 
   def test_unlink
     assert_equal 'Santiago (La Florida)',  Wikiscript.unlink( '[[Santiago]] ([[La Florida, Chile|La Florida]])' )

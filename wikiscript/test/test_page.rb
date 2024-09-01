@@ -1,14 +1,12 @@
-# encoding: utf-8
-
 ###
 #  to run use
-#     ruby -I ./lib -I ./test test/test_page.rb
+#     ruby test/test_page.rb
 
 
-require 'helper'
+require_relative 'helper'
 
 
-class TestPage < MiniTest::Test
+class TestPage < Minitest::Test
 
   def setup
     Wikiscript.lang = :en
@@ -27,11 +25,12 @@ class TestPage < MiniTest::Test
     pp text[0..600]
 
     ## check for some snippets
-    assert /{{Infobox country/ =~ text
-    assert /common_name = Austria/ =~ text
-    assert /capital = \[\[Vienna\]\]/ =~ text
+    assert /{{Infobox country/              =~ text
+    assert /common_name[ ]+=[ ]+Austria/    =~ text
+    assert /capital[ ]+=[ ]+\[\[Vienna\]\]/ =~ text
     # assert /The origins of modern-day Austria date back to the time/ =~ text
   end
+
 
   def test_sankt_poelten_en
     page = Wikiscript::Page.get( 'Sankt_Pölten' )

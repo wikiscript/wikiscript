@@ -4,7 +4,7 @@ module Wikiscript
 class OutlineReader
 
   def self.read( path )
-    txt = File.open( path, 'r:utf-8' ).read
+    txt = File.open( path, 'r:utf-8' ) { |f| f.read }
     parse( txt )
   end
 

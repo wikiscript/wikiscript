@@ -1,13 +1,11 @@
-# encoding: utf-8
-
 ###
 #  to run use
-#     ruby -I ./lib -I ./test test/test_table_reader.rb
+#     ruby test/test_table_reader.rb
 
 
-require 'helper'
+require_relative 'helper'
 
-class TestTableReader < MiniTest::Test
+class TestTableReader < Minitest::Test
 
   def test_basic
     table = Wikiscript.parse_table( <<TXT )

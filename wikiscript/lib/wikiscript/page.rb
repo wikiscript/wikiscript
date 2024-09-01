@@ -1,10 +1,9 @@
-# encoding: utf-8
 
 module Wikiscript
 
   class Page
 
-    include LogUtils::Logging
+    include Logging
 
     attr_reader :title, :lang
 
@@ -16,7 +15,7 @@ module Wikiscript
     end
 
     def self.read( path )
-      text = File.open( path, 'r:utf-8' ).read
+      text = File.open( path, 'r:utf-8' ) { |f| f.read }
       o = new( text, title: "File:#{path}" )   ## use auto-generated File:<path> title path - why? why not?
       o
     end

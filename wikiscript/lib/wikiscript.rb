@@ -1,27 +1,25 @@
-# encoding: utf-8
-
-## stdlibs
-
-require 'net/http'
-require 'uri'
-require 'cgi'
-require 'pp'
+## stdlibs via cocos
+require 'cocos'
 
 
 ## 3rd party gems/libs
 ## require 'props'
 
 require 'logutils'
-require 'fetcher'
+
+module Wikiscript
+  Logging = LogUtils::Logging
+end
+
+
 
 # our own code
-
-require 'wikiscript/version' # let it always go first
-require 'wikiscript/client'
-require 'wikiscript/table_reader'
-require 'wikiscript/page_reader'
-require 'wikiscript/outline_reader'
-require 'wikiscript/page'
+require_relative 'wikiscript/version' # let it always go first
+require_relative 'wikiscript/client'
+require_relative 'wikiscript/table_reader'
+require_relative 'wikiscript/page_reader'
+require_relative 'wikiscript/outline_reader'
+require_relative 'wikiscript/page'
 
 
 

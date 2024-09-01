@@ -1,15 +1,12 @@
-# encoding: utf-8
-
-
 ###
 #  to run use
-#     ruby -I ./lib -I ./test test/test_page_de.rb
+#     ruby test/test_page_de.rb
 
 
-require 'helper'
+require_relative 'helper'
 
 
-class TestPageDe < MiniTest::Test
+class TestPageDe < Minitest::Test
 
   def setup
     Wikiscript.lang = :de

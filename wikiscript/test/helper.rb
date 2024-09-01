@@ -1,8 +1,7 @@
-## $:.unshift(File.dirname(__FILE__))
-
 ## minitest setup
 require 'minitest/autorun'
 
+$LOAD_PATH.unshift( './lib' )
 
 ## our own code
 require 'wikiscript'
