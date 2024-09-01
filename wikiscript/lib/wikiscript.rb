@@ -20,6 +20,7 @@ require 'wikiscript/version' # let it always go first
 require 'wikiscript/client'
 require 'wikiscript/table_reader'
 require 'wikiscript/page_reader'
+require 'wikiscript/outline_reader'
 require 'wikiscript/page'
 
 

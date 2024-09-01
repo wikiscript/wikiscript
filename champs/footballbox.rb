@@ -3,6 +3,35 @@
 # https://en.wikipedia.org/wiki/Template:Fbaicon
 #  ...
 
+module TemplateHelper
+  ### add "built-in" template functions
+
+  ## {{small | Note: Although Belgium is located in Western European Time / UTC (Z) zone, since 25 February 1940, upon WW2 German occupation , Central European Time / UTC+01:00 was enforced as standard time, with a +0:42:30 offset (and +1:42:30 during DST ) from Brussels LMT (UTC+0:17:30).}}
+  def _small( txt )
+    " #{txt} "
+  end
+
+  def _fbaicon( txt )  # football association (aka country) icon
+    " (#{txt}) "
+  end
+
+  ###
+  ##  see https://en.wikipedia.org/wiki/Template:Start_date
+  def _start_date( year, month, day, **kwargs )
+    ## note - ignore df=y for now
+    " #{year}-#{month}-#{day} "
+  end
+end
+
+
+
+module Wikitree
+  class Template
+    include TemplateHelper
+  end # class Template
+end # module Wikitree
+
+
 
 module Wikiscript
 
