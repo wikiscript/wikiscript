@@ -404,6 +404,9 @@ class Parser
           input.check( %r{<ref[^>]*>}i )      ## e.g. <ref name="UNHDR">
       parse_ref( input )
     else
+      ## debug
+      puts "[debug] parse_text input = #{input.rest[0..10].pretty_inspect}"
+
       parse_text( input )
     end
   end
